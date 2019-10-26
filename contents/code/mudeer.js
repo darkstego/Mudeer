@@ -6,6 +6,10 @@ function getGeometry(area,slotGeometry){
     // adjust for remainder
     var xRemainder = area.width % slotGeometry.xSlots
     var yRemainder = area.height % slotGeometry.ySlots
+
+    var x = area.x + (width*slotGeometry.x)
+    var y = area.y + (height*slotGeometry.y)
+    
     if (slotGeometry.x == slotGeometry.xSlots - 1) {
 	width = width + xRemainder
     }
@@ -13,8 +17,6 @@ function getGeometry(area,slotGeometry){
 	height = height + yRemainder
     }
 
-    var x = area.x + (width*slotGeometry.x)
-    var y = area.y + (height*slotGeometry.y)
 
     return { x:x, y:y, width:(width*slotGeometry.xSize), height:(height*slotGeometry.ySize)}
 }
