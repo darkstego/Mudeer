@@ -46,114 +46,114 @@ function halfFullsceen(workspace) {
 
 
 // These only handle the case of struts that are top or bottom of screen
-registerShortcut("Mudeer Half Fullscreen Right", "Super Ultrawide Tiling: Half Fullscreen Right", "Meta+f", function () {
+registerShortcut("Mudeer Half Fullscreen Right", "Mudeer Ultrawide: Half Fullscreen Right", "Meta+f", function () {
     halfFullsceen(workspace)})
 
 
 // Screen by Thirds
-registerShortcut("Mudeer Left", "Super Ultrawide Tiling: Third Left", "Meta+a", function () {
+registerShortcut("Mudeer Left", "Mudeer Ultrawide: Third Left", "Meta+a", function () {
     move(workspace, 3,0,1,0)})
-registerShortcut("Mudeer Center", "Super Ultrawide Tiling: Third Center", "Meta+s", function () {
+registerShortcut("Mudeer Center", "Mudeer Ultrawide: Third Center", "Meta+s", function () {
     move(workspace, 3,1,1,0)})
-registerShortcut("Mudeer Right", "Super Ultrawide Tiling: Third Right", "Meta+d", function () {
+registerShortcut("Mudeer Right", "Mudeer Ultrawide: Third Right", "Meta+d", function () {
     move(workspace, 3,2,1,0)})
 
 // Screen by Thirds TOP
-registerShortcut("Mudeer Left Top", "Super Ultrawide Tiling: Third Left Top", "Meta+Ctrl+a", function () {
+registerShortcut("Mudeer Left Top", "Mudeer Ultrawide: Third Left Top", "Meta+Ctrl+a", function () {
     move(workspace, 3,0,1,1)})
-registerShortcut("Mudeer Center Top", "Super Ultrawide Tiling: Third Center Top", "Meta+Ctrl+s", function () {
+registerShortcut("Mudeer Center Top", "Mudeer Ultrawide: Third Center Top", "Meta+Ctrl+s", function () {
     move(workspace, 3,1,1,1)})
-registerShortcut("Mudeer Right Top", "Super Ultrawide Tiling: Third Right Top", "Meta+Ctrl+d", function () {
+registerShortcut("Mudeer Right Top", "Mudeer Ultrawide: Third Right Top", "Meta+Ctrl+d", function () {
     move(workspace, 3,2,1,1)})
 
 // Screen by Thirds Bottom
-registerShortcut("Mudeer Left Bottom", "Super Ultrawide Tiling: Third Left", "Meta+Alt+a", function () {
+registerShortcut("Mudeer Left Bottom", "Mudeer Ultrawide: Third Left", "Meta+Alt+a", function () {
     move(workspace, 3,0,1,2)})
-registerShortcut("Mudeer Center Bottom", "Super Ultrawide Tiling: Third Center", "Meta+Alt+s", function () {
+registerShortcut("Mudeer Center Bottom", "Mudeer Ultrawide: Third Center", "Meta+Alt+s", function () {
     move(workspace, 3,1,1,2)})
-registerShortcut("Mudeer Right Bottom", "Super Ultrawide Tiling: Third Right", "Meta+Alt+d", function () {
+registerShortcut("Mudeer Right Bottom", "Mudeer Ultrawide: Third Right", "Meta+Alt+d", function () {
     move(workspace, 3,2,1,2)})
 
 // Screen by Multiple Thirds
-registerShortcut("Mudeer Left Multi", "Super Ultrawide Tiling: Two-Thirds Left", "Meta+Shift+a", function () {
+registerShortcut("Mudeer Left Multi", "Mudeer Ultrawide: Two-Thirds Left", "Meta+Shift+a", function () {
     move(workspace, 3,0,2,0)})
-registerShortcut("Mudeer Center Multi", "Super Ultrawide Tiling: Whole Screen", "Meta+Shift+s", function () {
+registerShortcut("Mudeer Center Multi", "Mudeer Ultrawide: Whole Screen", "Meta+Shift+s", function () {
     move(workspace, 4,1,2,0)})
-registerShortcut("Mudeer Right Multi", "Super Ultrawide Tiling: Two-Thirds Right", "Meta+Shift+d", function () {
+registerShortcut("Mudeer Right Multi", "Mudeer Ultrawide: Two-Thirds Right", "Meta+Shift+d", function () {
     move(workspace, 3,2,2,0)})
 
 // Screen by Multiple Thirds TOP
-registerShortcut("Mudeer Left Multi Top", "Super Ultrawide Tiling: Two-Thirds Left Top", "Meta+Shift+Ctrl+a", function () {
+registerShortcut("Mudeer Left Multi Top", "Mudeer Ultrawide: Two-Thirds Left Top", "Meta+Shift+Ctrl+a", function () {
     move(workspace, 3,0,2,1)})
-registerShortcut("Mudeer Center Multi Top", "Super Ultrawide Tiling: Whole Screen Top", "Meta+Shift+Ctrl+s", function () {
+registerShortcut("Mudeer Center Multi Top", "Mudeer Ultrawide: Whole Screen Top", "Meta+Shift+Ctrl+s", function () {
     move(workspace, 4,1,2,1)})
-registerShortcut("Mudeer Right Multi Top", "Super Ultrawide Tiling: Two-Thirds Right Top", "Meta+Shift+Ctrl+d", function () {
+registerShortcut("Mudeer Right Multi Top", "Mudeer Ultrawide: Two-Thirds Right Top", "Meta+Shift+Ctrl+d", function () {
     move(workspace, 3,2,2,1)})
 
 // Screen by Multiple Thirds Bottom
-registerShortcut("Mudeer Left Multi Bottom", "Super Ultrawide Tiling: Two-Thirds Left Bottom", "Meta+Shift+Alt+a", function () {
+registerShortcut("Mudeer Left Multi Bottom", "Mudeer Ultrawide: Two-Thirds Left Bottom", "Meta+Shift+Alt+a", function () {
     move(workspace, 3,0,2,2)})
-registerShortcut("Mudeer Center Multi Bottom", "Super Ultrawide Tiling: Whole Screen Bottom", "Meta+Shift+Alt+s", function () {
+registerShortcut("Mudeer Center Multi Bottom", "Mudeer Ultrawide: Whole Screen Bottom", "Meta+Shift+Alt+s", function () {
     move(workspace, 4,1,2,2)})
-registerShortcut("Mudeer Right Multi Bottom", "Super Ultrawide Tiling: Two-Thirds Right Bottom", "Meta+Shift+Alt+d", function () {
+registerShortcut("Mudeer Right Multi Bottom", "Mudeer Ultrawide: Two-Thirds Right Bottom", "Meta+Shift+Alt+d", function () {
     move(workspace, 3,2,2,2)})
 
 // Screen By Quarters
-registerShortcut("Mudeer Far Left", "Super Ultrawide Tiling: Quarter Far Left", "Meta+z", function () {
+registerShortcut("Mudeer Far Left", "Mudeer Ultrawide: Quarter Far Left", "Meta+z", function () {
     move(workspace, 4,0,1,0)})
-registerShortcut("Mudeer Center Left", "Super Ultrawide Tiling: Quarter Center Left", "Meta+x", function () {
+registerShortcut("Mudeer Center Left", "Mudeer Ultrawide: Quarter Center Left", "Meta+x", function () {
     move(workspace, 4,1,1,0)})
-registerShortcut("Mudeer Center Right", "Super Ultrawide Tiling: Quarter Center Right", "Meta+c", function () {
+registerShortcut("Mudeer Center Right", "Mudeer Ultrawide: Quarter Center Right", "Meta+c", function () {
     move(workspace, 4,2,1,0)})
-registerShortcut("Mudeer Far Right", "Super Ultrawide Tiling: Quarter Far Right", "Meta+v", function () {
+registerShortcut("Mudeer Far Right", "Mudeer Ultrawide: Quarter Far Right", "Meta+v", function () {
     move(workspace, 4,3,1,0)})
 
 // Screen By Quarters Top
-registerShortcut("Mudeer Far Left Top", "Super Ultrawide Tiling: Quarter Far Left Top", "Meta+Ctrl+z", function () {
+registerShortcut("Mudeer Far Left Top", "Mudeer Ultrawide: Quarter Far Left Top", "Meta+Ctrl+z", function () {
     move(workspace, 4,0,1,1)})
-registerShortcut("Mudeer Center Left Top", "Super Ultrawide Tiling: Quarter Center Left Top", "Meta+Ctrl+x", function () {
+registerShortcut("Mudeer Center Left Top", "Mudeer Ultrawide: Quarter Center Left Top", "Meta+Ctrl+x", function () {
     move(workspace, 4,1,1,1)})
-registerShortcut("Mudeer Center Right Top", "Super Ultrawide Tiling: Quarter Center Right Top", "Meta+Ctrl+c", function () {
+registerShortcut("Mudeer Center Right Top", "Mudeer Ultrawide: Quarter Center Right Top", "Meta+Ctrl+c", function () {
     move(workspace, 4,2,1,1)})
-registerShortcut("Mudeer Far Right Top", "Super Ultrawide Tiling: Quarter Far Right Top", "Meta+Ctrl+v", function () {
+registerShortcut("Mudeer Far Right Top", "Mudeer Ultrawide: Quarter Far Right Top", "Meta+Ctrl+v", function () {
     move(workspace, 4,3,1,1)})
 
 // Screen By Quarters Bottom
-registerShortcut("Mudeer Far Bottom", "Super Ultrawide Tiling: Quarter Far Left Bottom", "Meta+Alt+z", function () {
+registerShortcut("Mudeer Far Bottom", "Mudeer Ultrawide: Quarter Far Left Bottom", "Meta+Alt+z", function () {
     move(workspace, 4,0,1,2)})
-registerShortcut("Mudeer Center Left Bottom", "Super Ultrawide Tiling: Quarter Center Left Bottom", "Meta+Alt+x", function () {
+registerShortcut("Mudeer Center Left Bottom", "Mudeer Ultrawide: Quarter Center Left Bottom", "Meta+Alt+x", function () {
     move(workspace, 4,1,1,2)})
-registerShortcut("Mudeer Center Right Bottom", "Super Ultrawide Tiling: Quarter Center Right Bottom", "Meta+Alt+c", function () {
+registerShortcut("Mudeer Center Right Bottom", "Mudeer Ultrawide: Quarter Center Right Bottom", "Meta+Alt+c", function () {
     move(workspace, 4,2,1,2)})
-registerShortcut("Mudeer Far Right Bottom", "Super Ultrawide Tiling: Quarter Far Right Bottom", "Meta+Alt+v", function () {
+registerShortcut("Mudeer Far Right Bottom", "Mudeer Ultrawide: Quarter Far Right Bottom", "Meta+Alt+v", function () {
     move(workspace, 4,3,1,2)})
 
 // Screen By Multiple Quarters
-registerShortcut("Mudeer Half Left", "Super Ultrawide Tiling: Half Left", "Meta+Shift+z", function () {
+registerShortcut("Mudeer Half Left", "Mudeer Ultrawide: Half Left", "Meta+Shift+z", function () {
     move(workspace, 4,0,3,0)})
-registerShortcut("Mudeer Three-Quarters Left", "Super Ultrawide Tiling: Three-Quarters Left", "Meta+Shift+x", function () {
+registerShortcut("Mudeer Three-Quarters Left", "Mudeer Ultrawide: Three-Quarters Left", "Meta+Shift+x", function () {
     move(workspace, 4,0,2,0)})
-registerShortcut("Mudeer Three-Quarters Right", "Super Ultrawide Tiling: Three-Quarters Right", "Meta+Shift+c", function () {
+registerShortcut("Mudeer Three-Quarters Right", "Mudeer Ultrawide: Three-Quarters Right", "Meta+Shift+c", function () {
     move(workspace, 4,2,2,0)})
-registerShortcut("Mudeer Half Right", "Super Ultrawide Tiling: Half Right", "Meta+Shift+v", function () {
+registerShortcut("Mudeer Half Right", "Mudeer Ultrawide: Half Right", "Meta+Shift+v", function () {
     move(workspace, 4,1,3,0)})
 
 // Screen By Multiple Quarters Top
-registerShortcut("Mudeer Half Left Top", "Super Ultrawide Tiling: Half Left Top", "Meta+Shift+Ctrl+z", function () {
+registerShortcut("Mudeer Half Left Top", "Mudeer Ultrawide: Half Left Top", "Meta+Shift+Ctrl+z", function () {
     move(workspace, 4,0,3,1)})
-registerShortcut("Mudeer Three-Quarters Left Top", "Super Ultrawide Tiling: Three-Quarters Left Top", "Meta+Shift+Ctrl+x", function () {
+registerShortcut("Mudeer Three-Quarters Left Top", "Mudeer Ultrawide: Three-Quarters Left Top", "Meta+Shift+Ctrl+x", function () {
     move(workspace, 4,0,2,1)})
-registerShortcut("Mudeer Three-Quarters Right Top", "Super Ultrawide Tiling: Three-Quarters Right Top", "Meta+Shift+Ctrl+c", function () {
+registerShortcut("Mudeer Three-Quarters Right Top", "Mudeer Ultrawide: Three-Quarters Right Top", "Meta+Shift+Ctrl+c", function () {
     move(workspace, 4,2,2,1)})
-registerShortcut("Mudeer Half Right Top", "Super Ultrawide Tiling: Half Right Top", "Meta+Shift+Ctrl+v", function () {
+registerShortcut("Mudeer Half Right Top", "Mudeer Ultrawide: Half Right Top", "Meta+Shift+Ctrl+v", function () {
     move(workspace, 4,1,3,1)})
 
 // Screen By Multiple Quarters Bottom
-registerShortcut("Mudeer Half Left Bottom", "Super Ultrawide Tiling: Half Left", "Meta+Shift+Alt+z", function () {
+registerShortcut("Mudeer Half Left Bottom", "Mudeer Ultrawide: Half Left", "Meta+Shift+Alt+z", function () {
     move(workspace, 4,0,3,2)})
-registerShortcut("Mudeer Three-Quarters Left Bottom", "Super Ultrawide Tiling: Three-Quarters Left", "Meta+Shift+Alt+x", function () {
+registerShortcut("Mudeer Three-Quarters Left Bottom", "Mudeer Ultrawide: Three-Quarters Left", "Meta+Shift+Alt+x", function () {
     move(workspace, 4,0,2,2)})
-registerShortcut("Mudeer Three-Quarters Right Bottom", "Super Ultrawide Tiling: Three-Quarters Right", "Meta+Shift+Alt+c", function () {
+registerShortcut("Mudeer Three-Quarters Right Bottom", "Mudeer Ultrawide: Three-Quarters Right", "Meta+Shift+Alt+c", function () {
     move(workspace, 4,2,2,2)})
-registerShortcut("Mudeer Half Right Bottom", "Super Ultrawide Tiling: Half Right", "Meta+Shift+Alt+v", function () {
+registerShortcut("Mudeer Half Right Bottom", "Mudeer Ultrawide: Half Right", "Meta+Shift+Alt+v", function () {
     move(workspace, 4,1,3,2)})
