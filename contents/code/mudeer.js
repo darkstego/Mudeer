@@ -4,6 +4,14 @@ function getGeometry(area,slotGeometry){
     var width = Math.floor(area.width / slotGeometry.xSlots)
     var height = Math.floor(area.height / slotGeometry.ySlots)
     // adjust for remainder
+    var xRemainder = area.width % slotGeometry.xSlots
+    var yRemainder = area.height % slotGeometry.ySlots
+    if (slotGeometry.x == slotGeometry.xSlots - 1) {
+	width = width + xRemainder
+    }
+    if (slotGeometry.y == slotGeometry.ySlots - 1) {
+	height = height + yRemainder
+    }
 
     var x = area.x + (width*slotGeometry.x)
     var y = area.y + (height*slotGeometry.y)
@@ -15,10 +23,6 @@ function getGeometry(area,slotGeometry){
 function move(workspace,xSlots,x,xSize, yPos) {
     var client = workspace.activeClient
     var area =  workspace.clientArea(KWin.MaximizeArea, client)
-    var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
-    if (client.geometry.height == fullArea.height) {
-	area = fullArea
-    }
     // Adjust for yPos (0:Full Height, 1: Top, 2: Bottom)
     var y = 0
     var ySlots = 1
@@ -31,32 +35,20 @@ function move(workspace,xSlots,x,xSize, yPos) {
     client.geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
 }
 
-
-
-function fullscreenHeight(workspace, fullscreen) {
+function halfFullsceen(workspace) {
     var client = workspace.activeClient
-    var area =  workspace.clientArea(KWin.MaximizeArea, client)
-    var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
-    if (fullscreen) {
-	area = fullArea
-    }
-	client.geometry.x = area.x
-	client.geometry.height = area.height
+    var area = workspace.clientArea(KWin.FullScreenArea, client)
+    client.geometry = getGeometry(area,{x:1,y:0,xSlots:2,ySlots:1,xSize:1,ySize:1})
 }
+
 
 // Must pass 'workspace' since it would be out of scope otherwise
 
 
 // These only handle the case of struts that are top or bottom of screen
-registerShortcut("Mudeer height fullscreen", "Super Ultrawide Tiling: Fullscreen Height", "Meta+Shift+Alt+f", function () {
-    fullscreenHeight(workspace,true)})
-registerShortcut("Mudeer height maximize", "Super Ultrawide Tiling: Maximize Height", "Meta+Shift+Ctrl+f", function () {
-    fullscreenHeight(workspace,false)})
+registerShortcut("Mudeer Half Fullscreen Right", "Super Ultrawide Tiling: Half Fullscreen Right", "Meta+f", function () {
+    halfFullsceen(workspace)})
 
-
-// Whole screen
-registerShortcut("Mudeer wholescreen", "Super Ultrawide Tiling: Whole Screen", "Meta+f", function () {
-    move(workspace, 3,0,3,0)})
 
 // Screen by Thirds
 registerShortcut("Mudeer Left", "Super Ultrawide Tiling: Third Left", "Meta+a", function () {
