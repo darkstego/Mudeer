@@ -1,4 +1,4 @@
-//var midIncrease = readConfig("MiddleIncrease", 0)
+var midIncrease = readConfig("MiddleIncrease", 0)
 
 function getGeometry(area,slotGeometry){
     var width = Math.floor(area.width / slotGeometry.xSlots)
@@ -21,6 +21,20 @@ function getGeometry(area,slotGeometry){
     return { x:x, y:y, width:(width*slotGeometry.xSize), height:(height*slotGeometry.ySize)}
 }
 
+// Adjust for middle increase
+function adjustGeometry(geometry,x,xSlots) {
+    if (xSlots = 3) {
+	if (x == 1) {
+	    geometry.width += 2*midIncrease
+	    geometry.x -= midIncrease
+	} else {
+	    geometry.width -= midIncrease
+	}
+	if (x == 2) {
+	    geometry.x += midIncrease
+	}
+    }
+}
 
 function move(workspace,xSlots,x,xSize, yPos) {
     var client = workspace.activeClient
@@ -34,7 +48,9 @@ function move(workspace,xSlots,x,xSize, yPos) {
 	y = yPos - 1
     }
 
-    client.geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
+    var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
+    adjustGeometry(geometry)
+    client.geometry = geometry
 }
 
 function halfFullsceen(workspace) {
