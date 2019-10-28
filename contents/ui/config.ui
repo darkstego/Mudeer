@@ -13,14 +13,29 @@
   <property name="windowTitle">
    <string>Mudeer Ultrawide Tiling Manager</string>
   </property>
-  <layout class="QFormLayout" name="formLayout">
-   <item row="0" column="0">
-    <widget class="QSpinBox" name="kcfg_MiddleIncrease">
-     <property name="text">
+  <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+        <widget class="QLabel" name="midIncreaseLabel">
+         <property name="toolTip">
+          <string>Width Increase in Pixels for Middle Slot in 3 Slot Setup</string>
+         </property>
+         <property name="text">
+          <string>Increase middle slot in 3 slot setup</string>
+         </property>
+        </widget>
+       </item>
+   <item>
+    <widget class="QSpinBox" name="kcfg_middleIncrease">
+     <property name="toolTip">
       <string>Middle Increase</string>
+     </property>
+     <property name="maximum">
+       <number>4000</number>
      </property>
     </widget>
    </item>
   </layout>
  </widget>
+ <resources/>
+ <connections/>
 </ui>

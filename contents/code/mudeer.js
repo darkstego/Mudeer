@@ -1,5 +1,3 @@
-var midIncrease = readConfig("MiddleIncrease", 0)
-
 function getGeometry(area,slotGeometry){
     var width = Math.floor(area.width / slotGeometry.xSlots)
     var height = Math.floor(area.height / slotGeometry.ySlots)
@@ -23,7 +21,9 @@ function getGeometry(area,slotGeometry){
 
 // Adjust for middle increase
 function adjustGeometry(geometry,x,xSlots) {
-    if (xSlots = 3) {
+    var midIncrease = readConfig("middleIncrease", 0)
+
+    if (xSlots == 3) {
 	if (x == 1) {
 	    geometry.width += 2*midIncrease
 	    geometry.x -= midIncrease
@@ -47,9 +47,8 @@ function move(workspace,xSlots,x,xSize, yPos) {
 	ySlots = 2
 	y = yPos - 1
     }
-
     var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
-    adjustGeometry(geometry)
+    adjustGeometry(geometry,x,xSlots)
     client.geometry = geometry
 }
 
