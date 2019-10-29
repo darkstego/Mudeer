@@ -20,7 +20,7 @@
           <string>Width Increase in Pixels for Middle Slot in 3 Slot Setup</string>
          </property>
          <property name="text">
-          <string>Increase middle slot in 3 slot setup</string>
+          <string>Width increase of middle slot in 3 slot setup</string>
          </property>
         </widget>
        </item>
@@ -32,6 +32,12 @@
      <property name="maximum">
        <number>4000</number>
      </property>
+     <property name="suffix">
+       <string> pixels</string>
+      </property>
+      <property name="singleStep">
+       <number>10</number>
+      </property>
     </widget>
    </item>
   </layout>
