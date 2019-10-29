@@ -36,9 +36,9 @@ function adjustGeometry(geometry,x,xSlots) {
     }
 }
 
-function move(workspace,xSlots,x,xSize, yPos) {
+function move(workspace,space,xSlots,x,xSize, yPos) {
     var client = workspace.activeClient
-    var area =  workspace.clientArea(KWin.MaximizeArea, client)
+    var area =  workspace.clientArea(space, client)
     // Adjust for yPos (0:Full Height, 1: Top, 2: Bottom)
     var y = 0
     var ySlots = 1
@@ -61,116 +61,123 @@ function halfFullsceen(workspace) {
 
 // Must pass 'workspace' since it would be out of scope otherwise
 
+var prefix = "Mudeer Ultrawide: "
+var maxArea = KWin.MaximizeArea
+var fullArea = KWin.FullScreenArea
 
 // These only handle the case of struts that are top or bottom of screen
-registerShortcut("Mudeer Half Fullscreen Right", "Mudeer Ultrawide: Half Fullscreen Right", "Meta+f", function () {
-    halfFullsceen(workspace)})
+registerShortcut("Mudeer Fullscreen", prefix+"Fullscreen Right Half", "Meta+f", function () {
+    move(workspace,fullArea, 1,0,1,0)})
+registerShortcut("Mudeer Fullscreen Right", prefix+"Fullscreen Right Half", "Meta+Alt+f", function () {
+    move(workspace,fullArea, 2,1,1,0)})
+registerShortcut("Mudeer Fullscreen Left", prefix+"Fullscreen Left Half", "Meta+Ctrl+f", function () {
+    move(workspace,fullArea, 2,0,1,0)})
 
 
 // Screen by Thirds
-registerShortcut("Mudeer Left", "Mudeer Ultrawide: Third Left", "Meta+a", function () {
-    move(workspace, 3,0,1,0)})
-registerShortcut("Mudeer Center", "Mudeer Ultrawide: Third Center", "Meta+s", function () {
-    move(workspace, 3,1,1,0)})
-registerShortcut("Mudeer Right", "Mudeer Ultrawide: Third Right", "Meta+d", function () {
-    move(workspace, 3,2,1,0)})
+registerShortcut("Mudeer Left", prefix+"Third Left", "Meta+a", function () {
+    move(workspace, maxArea, 3,0,1,0)})
+registerShortcut("Mudeer Center", prefix+"Third Center", "Meta+s", function () {
+    move(workspace, maxArea, 3,1,1,0)})
+registerShortcut("Mudeer Right", prefix+"Third Right", "Meta+d", function () {
+    move(workspace, maxArea, 3,2,1,0)})
 
 // Screen by Thirds TOP
-registerShortcut("Mudeer Left Top", "Mudeer Ultrawide: Third Left Top", "Meta+Ctrl+a", function () {
-    move(workspace, 3,0,1,1)})
-registerShortcut("Mudeer Center Top", "Mudeer Ultrawide: Third Center Top", "Meta+Ctrl+s", function () {
-    move(workspace, 3,1,1,1)})
-registerShortcut("Mudeer Right Top", "Mudeer Ultrawide: Third Right Top", "Meta+Ctrl+d", function () {
-    move(workspace, 3,2,1,1)})
+registerShortcut("Mudeer Left Top", prefix+"Third Left Top", "Meta+Ctrl+a", function () {
+    move(workspace, maxArea, 3,0,1,1)})
+registerShortcut("Mudeer Center Top", prefix+"Third Center Top", "Meta+Ctrl+s", function () {
+    move(workspace, maxArea, 3,1,1,1)})
+registerShortcut("Mudeer Right Top", prefix+"Third Right Top", "Meta+Ctrl+d", function () {
+    move(workspace, maxArea, 3,2,1,1)})
 
 // Screen by Thirds Bottom
-registerShortcut("Mudeer Left Bottom", "Mudeer Ultrawide: Third Left", "Meta+Alt+a", function () {
-    move(workspace, 3,0,1,2)})
-registerShortcut("Mudeer Center Bottom", "Mudeer Ultrawide: Third Center", "Meta+Alt+s", function () {
-    move(workspace, 3,1,1,2)})
-registerShortcut("Mudeer Right Bottom", "Mudeer Ultrawide: Third Right", "Meta+Alt+d", function () {
-    move(workspace, 3,2,1,2)})
+registerShortcut("Mudeer Left Bottom", prefix+"Third Left", "Meta+Alt+a", function () {
+    move(workspace, maxArea, 3,0,1,2)})
+registerShortcut("Mudeer Center Bottom", prefix+"Third Center", "Meta+Alt+s", function () {
+    move(workspace, maxArea, 3,1,1,2)})
+registerShortcut("Mudeer Right Bottom", prefix+"Third Right", "Meta+Alt+d", function () {
+    move(workspace, maxArea, 3,2,1,2)})
 
 // Screen by Multiple Thirds
-registerShortcut("Mudeer Left Multi", "Mudeer Ultrawide: Two-Thirds Left", "Meta+Shift+a", function () {
-    move(workspace, 3,0,2,0)})
-registerShortcut("Mudeer Center Multi", "Mudeer Ultrawide: Whole Screen", "Meta+Shift+s", function () {
-    move(workspace, 4,1,2,0)})
-registerShortcut("Mudeer Right Multi", "Mudeer Ultrawide: Two-Thirds Right", "Meta+Shift+d", function () {
-    move(workspace, 3,2,2,0)})
+registerShortcut("Mudeer Left Multi", prefix+"Two-Thirds Left", "Meta+Shift+a", function () {
+    move(workspace, maxArea, 3,0,2,0)})
+registerShortcut("Mudeer Center Multi", prefix+"Whole Screen", "Meta+Shift+s", function () {
+    move(workspace, maxArea, 4,1,2,0)})
+registerShortcut("Mudeer Right Multi", prefix+"Two-Thirds Right", "Meta+Shift+d", function () {
+    move(workspace, maxArea, 3,2,2,0)})
 
 // Screen by Multiple Thirds TOP
-registerShortcut("Mudeer Left Multi Top", "Mudeer Ultrawide: Two-Thirds Left Top", "Meta+Shift+Ctrl+a", function () {
-    move(workspace, 3,0,2,1)})
-registerShortcut("Mudeer Center Multi Top", "Mudeer Ultrawide: Whole Screen Top", "Meta+Shift+Ctrl+s", function () {
-    move(workspace, 4,1,2,1)})
-registerShortcut("Mudeer Right Multi Top", "Mudeer Ultrawide: Two-Thirds Right Top", "Meta+Shift+Ctrl+d", function () {
-    move(workspace, 3,2,2,1)})
+registerShortcut("Mudeer Left Multi Top", prefix+"Two-Thirds Left Top", "Meta+Shift+Ctrl+a", function () {
+    move(workspace, maxArea, 3,0,2,1)})
+registerShortcut("Mudeer Center Multi Top", prefix+"Whole Screen Top", "Meta+Shift+Ctrl+s", function () {
+    move(workspace, maxArea, 4,1,2,1)})
+registerShortcut("Mudeer Right Multi Top", prefix+"Two-Thirds Right Top", "Meta+Shift+Ctrl+d", function () {
+    move(workspace, maxArea, 3,2,2,1)})
 
 // Screen by Multiple Thirds Bottom
-registerShortcut("Mudeer Left Multi Bottom", "Mudeer Ultrawide: Two-Thirds Left Bottom", "Meta+Shift+Alt+a", function () {
-    move(workspace, 3,0,2,2)})
-registerShortcut("Mudeer Center Multi Bottom", "Mudeer Ultrawide: Whole Screen Bottom", "Meta+Shift+Alt+s", function () {
-    move(workspace, 4,1,2,2)})
-registerShortcut("Mudeer Right Multi Bottom", "Mudeer Ultrawide: Two-Thirds Right Bottom", "Meta+Shift+Alt+d", function () {
-    move(workspace, 3,2,2,2)})
+registerShortcut("Mudeer Left Multi Bottom", prefix+"Two-Thirds Left Bottom", "Meta+Shift+Alt+a", function () {
+    move(workspace, maxArea, 3,0,2,2)})
+registerShortcut("Mudeer Center Multi Bottom", prefix+"Whole Screen Bottom", "Meta+Shift+Alt+s", function () {
+    move(workspace, maxArea, 4,1,2,2)})
+registerShortcut("Mudeer Right Multi Bottom", prefix+"Two-Thirds Right Bottom", "Meta+Shift+Alt+d", function () {
+    move(workspace, maxArea, 3,2,2,2)})
 
 // Screen By Quarters
-registerShortcut("Mudeer Far Left", "Mudeer Ultrawide: Quarter Far Left", "Meta+z", function () {
-    move(workspace, 4,0,1,0)})
-registerShortcut("Mudeer Center Left", "Mudeer Ultrawide: Quarter Center Left", "Meta+x", function () {
-    move(workspace, 4,1,1,0)})
-registerShortcut("Mudeer Center Right", "Mudeer Ultrawide: Quarter Center Right", "Meta+c", function () {
-    move(workspace, 4,2,1,0)})
-registerShortcut("Mudeer Far Right", "Mudeer Ultrawide: Quarter Far Right", "Meta+v", function () {
-    move(workspace, 4,3,1,0)})
+registerShortcut("Mudeer Far Left", prefix+"Quarter Far Left", "Meta+z", function () {
+    move(workspace, maxArea, 4,0,1,0)})
+registerShortcut("Mudeer Center Left", prefix+"Quarter Center Left", "Meta+x", function () {
+    move(workspace, maxArea, 4,1,1,0)})
+registerShortcut("Mudeer Center Right", prefix+"Quarter Center Right", "Meta+c", function () {
+    move(workspace, maxArea, 4,2,1,0)})
+registerShortcut("Mudeer Far Right", prefix+"Quarter Far Right", "Meta+v", function () {
+    move(workspace, maxArea, 4,3,1,0)})
 
 // Screen By Quarters Top
-registerShortcut("Mudeer Far Left Top", "Mudeer Ultrawide: Quarter Far Left Top", "Meta+Ctrl+z", function () {
-    move(workspace, 4,0,1,1)})
-registerShortcut("Mudeer Center Left Top", "Mudeer Ultrawide: Quarter Center Left Top", "Meta+Ctrl+x", function () {
-    move(workspace, 4,1,1,1)})
-registerShortcut("Mudeer Center Right Top", "Mudeer Ultrawide: Quarter Center Right Top", "Meta+Ctrl+c", function () {
-    move(workspace, 4,2,1,1)})
-registerShortcut("Mudeer Far Right Top", "Mudeer Ultrawide: Quarter Far Right Top", "Meta+Ctrl+v", function () {
-    move(workspace, 4,3,1,1)})
+registerShortcut("Mudeer Far Left Top", prefix+"Quarter Far Left Top", "Meta+Ctrl+z", function () {
+    move(workspace, maxArea, 4,0,1,1)})
+registerShortcut("Mudeer Center Left Top", prefix+"Quarter Center Left Top", "Meta+Ctrl+x", function () {
+    move(workspace, maxArea, 4,1,1,1)})
+registerShortcut("Mudeer Center Right Top", prefix+"Quarter Center Right Top", "Meta+Ctrl+c", function () {
+    move(workspace, maxArea, 4,2,1,1)})
+registerShortcut("Mudeer Far Right Top", prefix+"Quarter Far Right Top", "Meta+Ctrl+v", function () {
+    move(workspace, maxArea, 4,3,1,1)})
 
 // Screen By Quarters Bottom
-registerShortcut("Mudeer Far Bottom", "Mudeer Ultrawide: Quarter Far Left Bottom", "Meta+Alt+z", function () {
-    move(workspace, 4,0,1,2)})
-registerShortcut("Mudeer Center Left Bottom", "Mudeer Ultrawide: Quarter Center Left Bottom", "Meta+Alt+x", function () {
-    move(workspace, 4,1,1,2)})
-registerShortcut("Mudeer Center Right Bottom", "Mudeer Ultrawide: Quarter Center Right Bottom", "Meta+Alt+c", function () {
-    move(workspace, 4,2,1,2)})
-registerShortcut("Mudeer Far Right Bottom", "Mudeer Ultrawide: Quarter Far Right Bottom", "Meta+Alt+v", function () {
-    move(workspace, 4,3,1,2)})
+registerShortcut("Mudeer Far Bottom", prefix+"Quarter Far Left Bottom", "Meta+Alt+z", function () {
+    move(workspace, maxArea, 4,0,1,2)})
+registerShortcut("Mudeer Center Left Bottom", prefix+"Quarter Center Left Bottom", "Meta+Alt+x", function () {
+    move(workspace, maxArea, 4,1,1,2)})
+registerShortcut("Mudeer Center Right Bottom", prefix+"Quarter Center Right Bottom", "Meta+Alt+c", function () {
+    move(workspace, maxArea, 4,2,1,2)})
+registerShortcut("Mudeer Far Right Bottom", prefix+"Quarter Far Right Bottom", "Meta+Alt+v", function () {
+    move(workspace, maxArea, 4,3,1,2)})
 
 // Screen By Multiple Quarters
-registerShortcut("Mudeer Half Left", "Mudeer Ultrawide: Half Left", "Meta+Shift+z", function () {
-    move(workspace, 4,0,2,0)})
-registerShortcut("Mudeer Three-Quarters Left", "Mudeer Ultrawide: Three-Quarters Left", "Meta+Shift+x", function () {
-    move(workspace, 4,0,3,0)})
-registerShortcut("Mudeer Three-Quarters Right", "Mudeer Ultrawide: Three-Quarters Right", "Meta+Shift+c", function () {
-    move(workspace, 4,1,3,0)})
-registerShortcut("Mudeer Half Right", "Mudeer Ultrawide: Half Right", "Meta+Shift+v", function () {
-    move(workspace, 4,2,2,0)})
+registerShortcut("Mudeer Half Left", prefix+"Half Left", "Meta+Shift+z", function () {
+    move(workspace, maxArea, 4,0,2,0)})
+registerShortcut("Mudeer Three-Quarters Left", prefix+"Three-Quarters Left", "Meta+Shift+x", function () {
+    move(workspace, maxArea, 4,0,3,0)})
+registerShortcut("Mudeer Three-Quarters Right", prefix+"Three-Quarters Right", "Meta+Shift+c", function () {
+    move(workspace, maxArea, 4,1,3,0)})
+registerShortcut("Mudeer Half Right", prefix+"Half Right", "Meta+Shift+v", function () {
+    move(workspace, maxArea, 4,2,2,0)})
 
 // Screen By Multiple Quarters Top
-registerShortcut("Mudeer Half Left Top", "Mudeer Ultrawide: Half Left Top", "Meta+Shift+Ctrl+z", function () {
-    move(workspace, 4,0,2,1)})
-registerShortcut("Mudeer Three-Quarters Left Top", "Mudeer Ultrawide: Three-Quarters Left Top", "Meta+Shift+Ctrl+x", function () {
-    move(workspace, 4,0,3,1)})
-registerShortcut("Mudeer Three-Quarters Right Top", "Mudeer Ultrawide: Three-Quarters Right Top", "Meta+Shift+Ctrl+c", function () {
-    move(workspace, 4,1,3,1)})
-registerShortcut("Mudeer Half Right Top", "Mudeer Ultrawide: Half Right Top", "Meta+Shift+Ctrl+v", function () {
-    move(workspace, 4,2,2,1)})
+registerShortcut("Mudeer Half Left Top", prefix+"Half Left Top", "Meta+Shift+Ctrl+z", function () {
+    move(workspace, maxArea, 4,0,2,1)})
+registerShortcut("Mudeer Three-Quarters Left Top", prefix+"Three-Quarters Left Top", "Meta+Shift+Ctrl+x", function () {
+    move(workspace, maxArea, 4,0,3,1)})
+registerShortcut("Mudeer Three-Quarters Right Top", prefix+"Three-Quarters Right Top", "Meta+Shift+Ctrl+c", function () {
+    move(workspace, maxArea, 4,1,3,1)})
+registerShortcut("Mudeer Half Right Top", prefix+"Half Right Top", "Meta+Shift+Ctrl+v", function () {
+    move(workspace, maxArea, 4,2,2,1)})
 
 // Screen By Multiple Quarters Bottom
-registerShortcut("Mudeer Half Left Bottom", "Mudeer Ultrawide: Half Left", "Meta+Shift+Alt+z", function () {
-    move(workspace, 4,0,2,2)})
-registerShortcut("Mudeer Three-Quarters Left Bottom", "Mudeer Ultrawide: Three-Quarters Left", "Meta+Shift+Alt+x", function () {
-    move(workspace, 4,0,3,2)})
-registerShortcut("Mudeer Three-Quarters Right Bottom", "Mudeer Ultrawide: Three-Quarters Right", "Meta+Shift+Alt+c", function () {
-    move(workspace, 4,1,3,2)})
-registerShortcut("Mudeer Half Right Bottom", "Mudeer Ultrawide: Half Right", "Meta+Shift+Alt+v", function () {
-    move(workspace, 4,2,2,2)})
+registerShortcut("Mudeer Half Left Bottom", prefix+"Half Left", "Meta+Shift+Alt+z", function () {
+    move(workspace, maxArea, 4,0,2,2)})
+registerShortcut("Mudeer Three-Quarters Left Bottom", prefix+"Three-Quarters Left", "Meta+Shift+Alt+x", function () {
+    move(workspace, maxArea, 4,0,3,2)})
+registerShortcut("Mudeer Three-Quarters Right Bottom", prefix+"Three-Quarters Right", "Meta+Shift+Alt+c", function () {
+    move(workspace, maxArea, 4,1,3,2)})
+registerShortcut("Mudeer Half Right Bottom", prefix+"Half Right", "Meta+Shift+Alt+v", function () {
+    move(workspace, maxArea, 4,2,2,2)})
