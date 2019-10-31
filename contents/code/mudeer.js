@@ -101,7 +101,7 @@ registerShortcut("Mudeer Left Multi", prefix+"Two-Thirds Left", "Meta+Shift+a", 
 registerShortcut("Mudeer Center Multi", prefix+"Middle Half", "Meta+Shift+s", function () {
     move(workspace, maxArea, 4,1,2,0)})
 registerShortcut("Mudeer Right Multi", prefix+"Two-Thirds Right", "Meta+Shift+d", function () {
-    move(workspace, maxArea, 3,2,2,0)})
+    move(workspace, maxArea, 3,1,2,0)})
 
 // Screen by Multiple Thirds TOP
 registerShortcut("Mudeer Left Multi Top", prefix+"Two-Thirds Left Top", "Meta+Shift+Ctrl+a", function () {
@@ -109,7 +109,7 @@ registerShortcut("Mudeer Left Multi Top", prefix+"Two-Thirds Left Top", "Meta+Sh
 registerShortcut("Mudeer Center Multi Top", prefix+"Middle Half Top", "Meta+Shift+Ctrl+s", function () {
     move(workspace, maxArea, 4,1,2,1)})
 registerShortcut("Mudeer Right Multi Top", prefix+"Two-Thirds Right Top", "Meta+Shift+Ctrl+d", function () {
-    move(workspace, maxArea, 3,2,2,1)})
+    move(workspace, maxArea, 3,1,2,1)})
 
 // Screen by Multiple Thirds Bottom
 registerShortcut("Mudeer Left Multi Bottom", prefix+"Two-Thirds Left Bottom", "Meta+Shift+Alt+a", function () {
@@ -117,7 +117,7 @@ registerShortcut("Mudeer Left Multi Bottom", prefix+"Two-Thirds Left Bottom", "M
 registerShortcut("Mudeer Center Multi Bottom", prefix+"Middle Half Bottom", "Meta+Shift+Alt+s", function () {
     move(workspace, maxArea, 4,1,2,2)})
 registerShortcut("Mudeer Right Multi Bottom", prefix+"Two-Thirds Right Bottom", "Meta+Shift+Alt+d", function () {
-    move(workspace, maxArea, 3,2,2,2)})
+    move(workspace, maxArea, 3,1,2,2)})
 
 // Screen By Quarters
 registerShortcut("Mudeer Far Left", prefix+"Quarter Far Left", "Meta+z", function () {
