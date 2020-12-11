@@ -51,7 +51,13 @@ function move(workspace,space,xSlots,x,xSize, yPos) {
     }
     var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
     adjustGeometry(geometry,x,xSlots)
+    client.setMaximize(false,false)
     client.geometry = geometry
+}
+
+function maximize(workspace) {
+    var client = workspace.activeClient
+    client.setMaximize(true,true)
 }
 
 
@@ -99,7 +105,7 @@ registerShortcut("Mudeer Right Bottom", prefix+"Third Right Bottom", "Meta+Alt+d
 registerShortcut("Mudeer Left Multi", prefix+"Two-Thirds Left", "Meta+Shift+a", function () {
     move(workspace, maxArea, 3,0,2,0)})
 registerShortcut("Mudeer Center Multi", prefix+"Middle Half", "Meta+Shift+s", function () {
-    move(workspace, maxArea, 4,1,2,0)})
+    maximize(workspace)})
 registerShortcut("Mudeer Right Multi", prefix+"Two-Thirds Right", "Meta+Shift+d", function () {
     move(workspace, maxArea, 3,1,2,0)})
 
