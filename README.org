@@ -1,0 +1,61 @@
+* Mudeer Tiling Manager for Ultrawide and Super Ultrawide monitors
+
+** Features
+- Split monitor by width into quarters or thirds and height by halves
+- Configurable width increase for the middle window when split by thirds
+- Half Fullscreen window option. Use monitor as dual screen by playing videos/games on half the screen
+- Soft tiling, allows for tiling and floating windows
+
+** Examples
+
+
+** Installation
+
+     #+BEGIN_EXAMPLE
+    git clone https://github.com/darkstego/Mudeer.git
+    plasmapkg2 --type kwinscript -i Mudeer
+    mkdir -p ~/.local/share/kservices5
+    ln -sf ~/.local/share/kwin/scripts/mudeer-ultrawide/metadata.desktop ~/.local/share/kservices5/mudeer-ultrawide.desktop
+   #+END_EXAMPLE
+
+   To update
+   
+   #+BEGIN_SRC bash
+   git clone https://github.com/darkstego/Mudeer.git &&  plasmapkg2 --type kwinscript -u Mudeer
+   #+END_SRC
+
+** Configuration
+   Configuration is done through KDE's Kwin Script Configuration.
+   You are able to configure the width of middle window in a 3-wide configuration.
+
+** Shortcuts
+   The default shortcuts were designed to easily use with the left hand to allow use quickly while using the mouse. As a result, *some of these shortcuts will not be enabled unless they are enabled manually* through the KDE shortcut menu. This happens when some of those shortcuts overwrite others in KDE.
+
+You can see all the shortcuts for this project by searching the global shortcuts settings menu for "mudeer".
+
+Below is the list of default shortcuts.
+
+| Shortcut             | Default Binding |
+|----------------------+-----------------|
+| Left Third           | Meta+a          |
+| Center Third         | Meta+s          |
+| Right Third          | Meta+d          |
+| Left Two Thirds      | Meta+Shift+a    |
+| Right Two Thirds     | Meta+Shift+d    |
+| Far Left Quarter     | Meta+z          |
+| Center Left Quarter  | Meta+x          |
+| Center Right Quarter | Meta+c          |
+| Far Right Quarter    | Meta+v          |
+| Left Half            | Meta+Shift+z    |
+| Left Three Quarters  | Meta+Shift+x    |
+| Center Half          | Meta+Shift+s    |
+| Right Three Quarters | Meta+Shift+c    |
+| Right Half           | Meta+Shift+v    |
+| Top half modifier    | Ctrl+           |
+| Bottom half modifier | Alt+            |
+
+
+Troubleshooting:
+
+- No configuration menus
+  Make sure the link to ~/.local/share/kservices5/mudeer-ultrawide.desktop is available.
