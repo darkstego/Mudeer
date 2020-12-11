@@ -55,12 +55,6 @@ function move(workspace,space,xSlots,x,xSize, yPos) {
     client.geometry = geometry
 }
 
-function maximize(workspace) {
-    var client = workspace.activeClient
-    client.setMaximize(true,true)
-}
-
-
 
 var prefix = "Mudeer Ultrawide: "
 var maxArea = KWin.MaximizeArea
@@ -105,7 +99,7 @@ registerShortcut("Mudeer Right Bottom", prefix+"Third Right Bottom", "Meta+Alt+d
 registerShortcut("Mudeer Left Multi", prefix+"Two-Thirds Left", "Meta+Shift+a", function () {
     move(workspace, maxArea, 3,0,2,0)})
 registerShortcut("Mudeer Center Multi", prefix+"Middle Half", "Meta+Shift+s", function () {
-    maximize(workspace)})
+    move(workspace, maxArea, 4,1,2,0)})
 registerShortcut("Mudeer Right Multi", prefix+"Two-Thirds Right", "Meta+Shift+d", function () {
     move(workspace, maxArea, 3,1,2,0)})
 
