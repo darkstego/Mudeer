@@ -1,4 +1,4 @@
-* Mudeer Tiling Manager for Ultrawide and Super Ultrawide monitors
+* Mudeer - KDE Plasma Tiling Manager for Ultrawide and Super Ultrawide monitors
 
 ** Features
 - Split monitor by width into quarters or thirds and height by halves
