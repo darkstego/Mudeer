@@ -24,6 +24,8 @@
    git clone https://github.com/darkstego/Mudeer.git &&  plasmapkg2 --type kwinscript -u Mudeer
    #+END_SRC
 
+   You will need to log out and back into the plasma session for changes to take effect.
+
 ** Configuration
    Configuration is done through KDE's Kwin Script Configuration.
    You are able to configure the width of middle window in a 3-wide configuration.
