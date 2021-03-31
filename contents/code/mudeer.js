@@ -21,20 +21,16 @@ function getGeometry(area,slotGeometry){
 }
 
 // Adjust for middle increase
-function adjustGeometry(geometry,x,xSlots) {
+function adjustGeometry(geometry,x,xSlots,xSize) {
+    if (xSlots != 3) return;
+    
     var midIncrease = readConfig("middleIncrease", 0)
+    
+    var xShift = [0,-1,1]
+    var widthShift = ((xSize <= 1) ? [-1,2,-1] : [1,1,1]) 
 
-    if (xSlots == 3) {
-	if (x == 1) {
-	    geometry.width += 2*midIncrease
-	    geometry.x -= midIncrease
-	} else {
-	    geometry.width -= midIncrease
-	}
-	if (x == 2) {
-	    geometry.x += midIncrease
-	}
-    }
+    geometry.x += xShift[x]*midIncrease
+    geometry.width += widthShift[x]*midIncrease
 }
 
 // main function called
@@ -50,7 +46,7 @@ function move(workspace,space,xSlots,x,xSize, yPos) {
 	y = yPos - 1
     }
     var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
-    adjustGeometry(geometry,x,xSlots)
+    adjustGeometry(geometry,x,xSlots,xSize)
     client.setMaximize(false,false)
     client.geometry = geometry
 }
