@@ -8,7 +8,7 @@
 
 ** Examples
   #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
-  [[https://github.com/darkstego/Mudeer/blob/media/mudeer.webp]]
+  [[https://github.com/darkstego/Mudeer/blob/media/mudeer.gif]]
   [[https://github.com/darkstego/Mudeer/blob/media/organize.webp]]
   [[https://github.com/darkstego/Mudeer/blob/media/fs.webp]]
 
