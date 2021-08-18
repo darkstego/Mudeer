@@ -7,10 +7,15 @@
 - Soft tiling, allows for tiling and floating windows
 
 ** Examples
-  #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
-  [[https://github.com/darkstego/Mudeer/blob/media/mudeer.gif]]
-  [[https://github.com/darkstego/Mudeer/blob/media/organize.gif]]
-  [[https://github.com/darkstego/Mudeer/blob/media/fs.gif]]
+*** Tiling Examples
+    #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+    [[https://github.com/darkstego/Mudeer/blob/media/mudeer.gif]]
+*** Quickly Organize Windows
+    #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+    [[https://github.com/darkstego/Mudeer/blob/media/organize.gif]]
+*** Mimic Dual Screen by Tiling to Half-Fullscreen 
+    #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+    [[https://github.com/darkstego/Mudeer/blob/media/fs.gif]]
 
 ** Installation
 
