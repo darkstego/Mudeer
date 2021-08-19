@@ -13,7 +13,7 @@
 *** Quickly Organize Windows
     #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
     [[https://github.com/darkstego/Mudeer/blob/media/organize.gif]]
-*** Mimic Dual Screen by Tiling to Half-Fullscreen 
+*** Mimic Dual Screen by Tiling Fullscreen to occupy half the monitor
     #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
     [[https://github.com/darkstego/Mudeer/blob/media/fs.gif]]
 
