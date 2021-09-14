@@ -43,7 +43,7 @@
 
 You can see all the shortcuts for this project by searching the global shortcuts settings menu for "mudeer".
 
-Below is the list of default shortcuts.
+Below is the list of default shortcuts. NOTE: Meta in KDE is the Win (or Super) key.
 
 | Shortcut             | Default Binding |
 |----------------------+-----------------|
