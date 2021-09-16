@@ -59,7 +59,7 @@ var fullArea = KWin.FullScreenArea
 
 // Must pass 'workspace' since it would be out of scope otherwise
 
-registerShortcut("Mudeer Fullscreen", prefix+"Fullscreen Right Half", "Meta+f", function () {
+registerShortcut("Mudeer Fullscreen", prefix+"Fullscreen", "Meta+f", function () {
     move(workspace,fullArea, 1,0,1,0)})
 registerShortcut("Mudeer Fullscreen Right", prefix+"Fullscreen Right Half", "Meta+Alt+f", function () {
     move(workspace,fullArea, 2,1,1,0)})
