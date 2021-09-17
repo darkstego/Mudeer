@@ -43,7 +43,42 @@
 
 You can see all the shortcuts for this project by searching the global shortcuts settings menu for "mudeer".
 
-Below is the list of default shortcuts. NOTE: Meta in KDE is the Win (or Super) key.
+The Shortcuts all use the Meta (known as Win or Super outside
+KDE). Below is the explenation of the default bindings.
+*** Thirds
+    Use Meta + A,S,D for left middle and right thirds respectively.
+    
+    Alt modifier for only the bottom half.
+    
+    Ctrl modifier for only the top half.
+
+    Shift modifier increases width to encompass all neighboring
+    thirds. (e.g. Pressing Meta+Shift+A will make the window take up
+    the left and middle thirds). Note: if chosen with middle third
+    (S) then it will consider it as middle-half, since otherwise it
+    would be identical to maximize.
+    
+    Note: Middle third can be made bigger than the others by using the Kwin Configuration.
+    This is useful to give priority to the middle window in a three wide display.
+
+*** Quarters    
+    Use Meta + Z,X,C,V for left, middle left, middle right, and right Quarters respectively.
+    
+    Alt modifier for only the bottom half.
+    
+    Ctrl modifier for only the top half.
+
+    Shift modifier increases width to encompass all neighboring
+    slots. (e.g. Pressing Meta+Shift+X will make the window take up
+    the left 3/4 of the screen).
+
+*** Fullscreen
+    Use Meta + F to fullscreen the window (ignoring things like taskbars)
+    
+    To Fullscreen on half the screen Use Ctrl and Shift for Left and Right respectively.
+    
+*** Summary Table 
+Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
 
 | Shortcut             | Default Binding |
 |----------------------+-----------------|
@@ -64,8 +99,7 @@ Below is the list of default shortcuts. NOTE: Meta in KDE is the Win (or Super) 
 | Top half modifier    | Ctrl+           |
 | Bottom half modifier | Alt+            |
 
-
-Troubleshooting:
+** Troubleshooting
 
 - No configuration menus
   Make sure the link to ~/.local/share/kservices5/mudeer-ultrawide.desktop is available.
