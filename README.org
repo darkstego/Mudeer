@@ -39,12 +39,17 @@
    You are able to configure the width of middle window in a 3-wide configuration.
 
 ** Shortcuts
-   The default shortcuts were designed to easily use with the left hand to allow use quickly while using the mouse. As a result, *some of these shortcuts will not be enabled unless they are enabled manually* through the KDE shortcut menu. This happens when some of those shortcuts overwrite others in KDE.
+   The default shortcuts were designed to easily use with the left
+   hand to allow use quickly while using the mouse. As a result, *some
+   of these shortcuts will not be enabled unless they are enabled
+   manually* through the KDE shortcut menu. This happens when some of
+   those shortcuts overwrite others in KDE.
 
-You can see all the shortcuts for this project by searching the global shortcuts settings menu for "mudeer".
+   You can see all the shortcuts for this project by searching the
+   global shortcuts settings menu for "mudeer".
 
-The Shortcuts all use the Meta (known as Win or Super outside
-KDE). Below is the explenation of the default bindings.
+   The Shortcuts all use the Meta (known as Win or Super outside
+   KDE). Below is the explenation of the default bindings.
 *** Thirds
     Use Meta + A,S,D for left middle and right thirds respectively.
     
@@ -75,7 +80,9 @@ KDE). Below is the explenation of the default bindings.
 *** Fullscreen
     Use Meta + F to fullscreen the window (ignoring things like taskbars)
     
-    To Fullscreen on half the screen Use Ctrl and Shift for Left and Right respectively.
+    To Fullscreen on half the screen Use Ctrl and Shift for Left and
+    Right respectively. This is helpful to mimic the behaviour of having
+    two seperate monitors side-by-side.
     
 *** Summary Table 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
@@ -98,6 +105,11 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Right Half           | Meta+Shift+v    |
 | Top half modifier    | Ctrl+           |
 | Bottom half modifier | Alt+            |
+
+| Fullscreen            | Meta+f      |
+| Left half fullscreen  | Meta+Ctrl+f |
+| Right half fullscreen | Meta+Alt+f  |
+
 
 ** Troubleshooting
 
