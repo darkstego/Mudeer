@@ -64,7 +64,7 @@
     would be identical to maximize.
     
     Note: Middle third can be made bigger than the others by using the Kwin Configuration.
-    This is useful to give priority to the middle window in a three wide display.
+    This is useful to give extra space to the middle window in a three wide display.
 
 *** Quarters    
     Use Meta + Z,X,C,V for left, middle left, middle right, and right Quarters respectively.
