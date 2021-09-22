@@ -40,9 +40,7 @@
 
 ** Shortcuts
    The default shortcuts were designed to easily use with the left
-   hand to allow use quickly while using the mouse. As a result, *some
-   of these shortcuts will not be enabled unless they are enabled
-   manually* through the KDE shortcut menu. This happens when some of
+   hand to allow use quickly while using the mouse. As a result, *some of these shortcuts will not be enabled unless they are enabled manually* through the KDE shortcut menu. This happens when some of
    those shortcuts overwrite others in KDE.
 
    You can see all the shortcuts for this project by searching the
