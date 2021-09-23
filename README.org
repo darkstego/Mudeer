@@ -19,7 +19,9 @@
 
 ** Installation
 
-*** KDE Store
+*** KDE Store (Through Systemsettings)
+NOTE: Systemsettings downloader can be finicky at time.  
+    
 Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
 
 To get the configuration settings to work you will need to register them manually from the command line as shown below.
@@ -42,7 +44,7 @@ I am unsure if there is a way to register the configuration automatically with t
    To update
    
    #+BEGIN_SRC bash
-   git clone https://github.com/darkstego/Mudeer.git &&  plasmapkg2 --type kwinscript -u Mudeer
+   git clone https://github.com/darkstego/Mudeer.git &&  kpackagetool5 -u Mudeer
    #+END_SRC
 
    You may need to log out and back into the plasma session for changes to take effect.
@@ -94,9 +96,9 @@ I am unsure if there is a way to register the configuration automatically with t
 *** Fullscreen
     Use Meta + F to fullscreen the window (ignoring things like taskbars)
     
-    To Fullscreen on half the screen Use Ctrl and Shift for Left and
-    Right respectively. This is helpful to mimic the behaviour of having
-    two seperate monitors side-by-side.
+    To Fullscreen on half the screen Use Ctrl and Shift for Left and Right respectively. This is helpful to mimic the behaviour of having two seperate monitors side-by-side.
+
+    Holding the shift key will maximize instead of full screen (not cover the panel) in the side selected. This can be useful when you want to run a fullscreen (movie or game) on half the screen and maximize an application in the remaining part of the screen.  
     
 *** Summary Table 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
