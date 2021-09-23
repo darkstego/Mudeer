@@ -3,6 +3,7 @@
 ** Features
 - Split monitor by width into quarters or thirds and height by halves
 - Configurable width increase for the middle window when split by thirds
+- Configurable gap between windows
 - Half Fullscreen window option. Use monitor as dual screen by playing videos/games on half the screen
 - Soft tiling, allows for tiling and floating windows
 
