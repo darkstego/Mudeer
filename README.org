@@ -19,9 +19,22 @@
 
 ** Installation
 
+*** KDE Store
+Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
+
+To get the configuration settings to work you will need to register them manually from the command line as shown below.
+
+     #+BEGIN_EXAMPLE
+    mkdir -p ~/.local/share/kservices5
+    ln -sf ~/.local/share/kwin/scripts/mudeer-ultrawide/metadata.desktop ~/.local/share/kservices5/mudeer-ultrawide.desktop
+   #+END_EXAMPLE
+
+I am unsure if there is a way to register the configuration automatically with the scripts. 
+   
+*** Manual
      #+BEGIN_EXAMPLE
     git clone https://github.com/darkstego/Mudeer.git
-    plasmapkg2 --type kwinscript -i Mudeer
+    kpackagetool5 -i Mudeer
     mkdir -p ~/.local/share/kservices5
     ln -sf ~/.local/share/kwin/scripts/mudeer-ultrawide/metadata.desktop ~/.local/share/kservices5/mudeer-ultrawide.desktop
    #+END_EXAMPLE
@@ -32,11 +45,14 @@
    git clone https://github.com/darkstego/Mudeer.git &&  plasmapkg2 --type kwinscript -u Mudeer
    #+END_SRC
 
-   You will need to log out and back into the plasma session for changes to take effect.
+   You may need to log out and back into the plasma session for changes to take effect.
 
 ** Configuration
-   Configuration is done through KDE's Kwin Script Configuration.
-   You are able to configure the width of middle window in a 3-wide configuration.
+   Configuration is done through KDE's Kwin Script Configuration. Find Mudeer under System Settings -> Kwin Scripts and there will be an options button.
+
+   When changing the options you need to disable then enable the script for the changes to take effect. I think this is a quirk in KDE scripts.
+
+   In the configuration menu you are able to configure the width of middle window in a 3-wide configuration, and the gap between windows.
 
 ** Shortcuts
    The default shortcuts were designed to easily use with the left
