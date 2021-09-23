@@ -131,5 +131,5 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 
 ** Troubleshooting
 
-- No configuration menus
+*** No configuration menus
   Make sure the link to ~/.local/share/kservices5/mudeer-ultrawide.desktop is available.
