@@ -47,6 +47,8 @@ I am unsure if there is a way to register the configuration automatically with t
    git clone https://github.com/darkstego/Mudeer.git &&  kpackagetool5 -u Mudeer
    #+END_SRC
 
+   You will need to disable then enable script from Systemsettings -> Kwin Scripts for update changes to take effect.
+
    You may need to log out and back into the plasma session for changes to take effect.
 
 ** Configuration
