@@ -40,6 +40,32 @@
       </property>
     </widget>
    </item>
+   <item>
+     <widget class="QLabel" name="gapLabel">
+       <property name="toolTip">
+         <string>Gap in pixels</string>
+       </property>
+       <property name="text">
+         <string>Gap in pixels</string>
+       </property>
+     </widget>
+   </item>
+   <item>
+     <widget class="QSpinBox" name="kcfg_gap">
+       <property name="toolTip">
+	 <string>Gap</string>
+       </property>
+       <property name="maximum">
+	 <number>2000</number>
+       </property>
+       <property name="suffix">
+	 <string> pixels</string>
+       </property>
+       <property name="singleStep">
+	 <number>1</number>
+       </property>
+     </widget>
+   </item>
   </layout>
  </widget>
  <resources/>

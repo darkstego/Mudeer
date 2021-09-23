@@ -20,17 +20,23 @@ function getGeometry(area,slotGeometry){
     return { x:x, y:y, width:(width*slotGeometry.xSize), height:(height*slotGeometry.ySize)}
 }
 
-// Adjust for middle increase
+// Adjust for middle increase and gap
 function adjustGeometry(geometry,x,xSlots,xSize) {
-    if (xSlots != 3) return;
-    
-    var midIncrease = readConfig("middleIncrease", 0)
-    
-    var xShift = [0,-1,1]
-    var widthShift = ((xSize <= 1) ? [-1,2,-1] : [1,1,1]) 
 
-    geometry.x += xShift[x]*midIncrease
-    geometry.width += widthShift[x]*midIncrease
+    var midIncrease = readConfig("middleIncrease", 0)
+    var gap = readConfig("gap",0)
+
+    if (xSlots == 3) {
+	var xShift = [0,-1,1]
+	var widthShift = ((xSize <= 1) ? [-1,2,-1] : [1,1,1]) 
+
+	geometry.x += xShift[x]*midIncrease
+	geometry.width += widthShift[x]*midIncrease
+    }
+    geometry.x += gap
+    geometry.y += gap
+    geometry.width -= 2*gap
+    geometry.height -= 2*gap
 }
 
 // main function called
