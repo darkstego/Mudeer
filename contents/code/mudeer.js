@@ -42,6 +42,7 @@ function adjustGeometry(geometry,x,xSlots,xSize) {
 // main function called
 function move(workspace,xSlots,x,xSize, yPos) {
     var client = workspace.activeClient
+    if (client.specialWindow) return
     var area =  workspace.clientArea(KWin.MaximizeArea, client)
     // Adjust for yPos (0:Full Height, 1: Top, 2: Bottom)
     var y = 0
@@ -63,6 +64,7 @@ function move(workspace,xSlots,x,xSize, yPos) {
 // remainder: true then window will fill remaining space while respecting panel
 function fullscreen(workspace, side, remainder=false) {
     let client = workspace.activeClient
+    if (client.specialWindow) return
     let maxArea = workspace.clientArea(KWin.MaximizeArea, client)
     let fullArea = workspace.clientArea(KWin.FullScreenArea, client)
     var geometry= {x:fullArea.x,y:fullArea.y,width:fullArea.width,height:fullArea.height}
