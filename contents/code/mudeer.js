@@ -79,8 +79,15 @@ function fullscreen(workspace, side, remainder) {
     if (remainder) {
         geometry.y=maxArea.y
         geometry.height=maxArea.height
-        geometry.x=maxArea.x
-        geometry.width-=fullArea.width-maxArea.width
+	if (geometry.x < maxArea.x) {
+	    var diff = maxArea.x - geometry.x
+            geometry.x=maxArea.x
+            geometry.width-=diff
+	}
+	else if ((geometry.x + geometry.width) > (maxArea.x + maxArea.width)) {
+	    var diff= (geometry.x + geometry.width) - (maxArea.x + maxArea.width)
+	    geometry.width-=diff
+	}
     }
     client.geometry=geometry
 }
