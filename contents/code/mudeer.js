@@ -8,12 +8,12 @@ function getGeometry(area,slotGeometry){
 
     var x = area.x + (width*slotGeometry.x)
     var y = area.y + (height*slotGeometry.y)
-    
+
     if (slotGeometry.x == slotGeometry.xSlots - 1) {
-	width = width + xRemainder
+        width = width + xRemainder
     }
     if (slotGeometry.y == slotGeometry.ySlots - 1) {
-	height = height + yRemainder
+       height = height + yRemainder
     }
 
 
@@ -22,16 +22,15 @@ function getGeometry(area,slotGeometry){
 
 // Adjust for middle increase and gap
 function adjustGeometry(geometry,x,xSlots,xSize) {
-
     var midIncrease = readConfig("middleIncrease", 0)
     var gap = readConfig("gap",0)
 
     if (xSlots == 3) {
-	var xShift = [0,-1,1]
-	var widthShift = ((xSize <= 1) ? [-1,2,-1] : [1,1,1]) 
+        var xShift = [0,-1,1]
+        var widthShift = ((xSize <= 1) ? [-1,2,-1] : [1,1,1])
 
-	geometry.x += xShift[x]*midIncrease
-	geometry.width += widthShift[x]*midIncrease
+        geometry.x += xShift[x]*midIncrease
+        geometry.width += widthShift[x]*midIncrease
     }
     geometry.x += gap
     geometry.y += gap
@@ -43,14 +42,15 @@ function adjustGeometry(geometry,x,xSlots,xSize) {
 function move(workspace,xSlots,x,xSize, yPos) {
     var client = workspace.activeClient
     if (client.specialWindow) return
+
     var area =  workspace.clientArea(KWin.MaximizeArea, client)
     // Adjust for yPos (0:Full Height, 1: Top, 2: Bottom)
     var y = 0
     var ySlots = 1
     var ySize = 1
     if (yPos > 0) {
-	ySlots = 2
-	y = yPos - 1
+        ySlots = 2
+        y = yPos - 1
     }
     var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
     adjustGeometry(geometry,x,xSlots,xSize)
@@ -62,37 +62,38 @@ function move(workspace,xSlots,x,xSize, yPos) {
 //       1 = Left
 //       2 = Right
 // remainder: true then window will fill remaining space while respecting panel
-function fullscreen(workspace, side, remainder=false) {
-    let client = workspace.activeClient
+function fullscreen(workspace, side, remainder) {
+    var client = workspace.activeClient
     if (client.specialWindow) return
-    let maxArea = workspace.clientArea(KWin.MaximizeArea, client)
-    let fullArea = workspace.clientArea(KWin.FullScreenArea, client)
+
+    var maxArea = workspace.clientArea(KWin.MaximizeArea, client)
+    var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
     var geometry= {x:fullArea.x,y:fullArea.y,width:fullArea.width,height:fullArea.height}
-    
+
     if (side > 0) {
-	geometry.width=fullArea.width/2
+        geometry.width=fullArea.width/2
     }
     if (side == 2) {
-	geometry.x+=fullArea.width/2
+        geometry.x+=fullArea.width/2
     }
     if (remainder) {
-	geometry.y=maxArea.y
-	geometry.height=maxArea.height
-	geometry.x=maxArea.x
-	geometry.width-=fullArea.width-maxArea.width
+        geometry.y=maxArea.y
+        geometry.height=maxArea.height
+        geometry.x=maxArea.x
+        geometry.width-=fullArea.width-maxArea.width
     }
     client.geometry=geometry
 }
 
-const prefix = "Mudeer Ultrawide: "
+var prefix = "Mudeer Ultrawide: "
 
 // Must pass 'workspace' since it would be out of scope otherwise
 registerShortcut("Mudeer Fullscreen", prefix+"Fullscreen", "Meta+f", function () {
-    fullscreen(workspace, 0)})
+    fullscreen(workspace, 0, false)})
 registerShortcut("Mudeer Fullscreen Right", prefix+"Fullscreen Right Half", "Meta+Alt+f", function () {
-    fullscreen(workspace, 2)})
+    fullscreen(workspace, 2, false)})
 registerShortcut("Mudeer Fullscreen Left", prefix+"Fullscreen Left Half", "Meta+Ctrl+f", function () {
-    fullscreen(workspace, 1)})
+    fullscreen(workspace, 1, false)})
 registerShortcut("Mudeer Fullscreen Right Remainder", prefix+"Fullscreen Right Half Remainder", "Meta+Alt+Shift+f", function () {
     fullscreen(workspace, 2, true)})
 registerShortcut("Mudeer Fullscreen Left Remainder", prefix+"Fullscreen Left Half Remainder", "Meta+Ctrl+Shift+f", function () {
