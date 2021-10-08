@@ -101,7 +101,9 @@ I am unsure if there is a way to register the configuration automatically with t
     
     To Fullscreen on half the screen Use Ctrl and Shift for Left and Right respectively. This is helpful to mimic the behaviour of having two seperate monitors side-by-side.
 
-    Holding the shift key will maximize instead of full screen (not cover the panel) in the side selected. This can be useful when you want to run a fullscreen (movie or game) on half the screen and maximize an application in the remaining part of the screen.  
+    Holding the shift key will maximize instead of full screen (not cover the panel) in the side selected. This can be useful when you want to run a fullscreen (movie or game) on half the screen and maximize an application in the remaining part of the screen.
+
+    One recommendation is binding "Maximize Window" to Meta+Shift+f as it fits logically with these shortcuts.
     
 *** Summary Table 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
@@ -129,7 +131,17 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Left half fullscreen  | Meta+Ctrl+f |
 | Right half fullscreen | Meta+Alt+f  |
 
-
+*** Shortcuts Visualizations
+Must press the Meta (aka Win or Super) key with all these shortcuts.
+    
+**** Standard Shortcuts
+     #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+     [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts.png]]     
+ 
+**** Fullscreen Shortcuts (Ignores Desktop Panels)
+      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+      [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts-fullscreen.png]]     
+      
 ** Troubleshooting
 
 *** No configuration menus
