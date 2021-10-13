@@ -141,6 +141,10 @@ Must press the Meta (aka Win or Super) key with all these shortcuts.
 **** Fullscreen Shortcuts (Ignores Desktop Panels)
       #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
       [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts-fullscreen.png]]     
+
+
+*** Recommendations for Non-Ultrawide Monitors
+    For users of Non Ultrawide Monitors this script can be utilized by only mapping shortcuts for the left and right half tiling (and their top/bottom alternatives). This is functionally similar to KDE's own Quick Tile option with the added flexibility of having an adjustable gap between the windows.
       
 ** Troubleshooting
 
