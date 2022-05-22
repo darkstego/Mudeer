@@ -62,7 +62,7 @@
 	 <string> pixels</string>
        </property>
        <property name="singleStep">
-	 <number>1</number>
+	 <number>2</number>
        </property>
      </widget>
    </item>

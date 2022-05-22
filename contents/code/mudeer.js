@@ -37,18 +37,33 @@ function adjustWidth(geometry,x,xSlots,xSize) {
 function adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize) {
 	var gap = readConfig("gap", 0)
 	var halfgap = Math.floor(gap / 2)
+	
+	geometry.x += halfgap
+	geometry.y += halfgap
+	geometry.width -= 2*halfgap
+	geometry.height -= 2*halfgap
+
 	if (x == 0) {
-		geometry.x += gap
+		geometry.x += halfgap
 		geometry.width -= halfgap
 	}
-	geometry.x += gap
-	geometry.y += gap
-	geometry.width -= 2*gap
-	geometry.height -= 2*gap
-
+	if (y == 0) {
+		geometry.y += halfgap
+		geometry.height -= halfgap
+	}	
+	if (x+xSize == xSlots) {
+		geometry.width -= halfgap
+	}
+	if (y+ySize == ySlots) {
+		geometry.height -= halfgap
+	}
 }
 
 // main function called
+// xSlots -> how many segments to split the x axis
+// x -> starting slot starting with 0
+// xSize -> how many slots to occupy on the xAxis
+// yPos ->  (0:Full Height, 1: Top, 2: Bottom)
 function move(workspace,xSlots,x,xSize, yPos) {
 	var client = workspace.activeClient
 	if (client.specialWindow) return
@@ -63,8 +78,8 @@ function move(workspace,xSlots,x,xSize, yPos) {
 		y = yPos - 1
 	}
 	var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
-	adjustWidth(geometry,x,xSlots,xSize)
 	adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize)
+	adjustWidth(geometry,x,xSlots,xSize)
 	client.setMaximize(false,false)
 	client.geometry = geometry
 }
