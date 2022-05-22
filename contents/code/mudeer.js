@@ -77,17 +77,19 @@ function move(workspace,xSlots,x,xSize, yPos) {
 		ySlots = 2
 		y = yPos - 1
 	}
+
+	// Handle the case of veritcal monitors
+	var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
+	if (fullArea.height > fullArea.width) {
+		[x,xSlots,xSize,y,ySlots,ySize] = [y,ySlots,ySize,x,xSlots,xSize]
+	}
+
 	var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
 	adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize)
 	adjustWidth(geometry,x,xSlots,xSize)
 	client.setMaximize(false,false)
 	client.geometry = geometry
 }
-
-function isPortrait(area) {
-	return area.height > area.width
-}
-
 
 
 // Side: 0 = Full
