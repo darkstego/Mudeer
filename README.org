@@ -4,7 +4,7 @@
 - Split monitor by width into quarters or thirds and height by halves
 - Configurable width increase for the middle window when split by thirds
 - Configurable gap between windows
-- Half Fullscreen window option. Use monitor as dual screen by playing videos/games on half the screen
+- Allows windows to fullscreen onto a portion of the screen
 - Soft tiling, allows for tiling and floating windows
 - Properly handles horizontal and vertical screen orientations
   
@@ -128,9 +128,8 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Top half modifier    | Ctrl+           |
 | Bottom half modifier | Alt+            |
 
-| Fullscreen            | Meta+f      |
-| Left half fullscreen  | Meta+Ctrl+f |
-| Right half fullscreen | Meta+Alt+f  |
+| Fullscreen Prefix                 | Meta+Ctrl+f       |
+| Fullscreen Prefix avoiding Panels | Meta+Ctrl+Shift+f |
 
 *** Shortcuts Visualizations
 Must press the Meta (aka Win or Super) key with all these shortcuts.
@@ -139,9 +138,10 @@ Must press the Meta (aka Win or Super) key with all these shortcuts.
      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
      [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts.png]]     
  
-**** Fullscreen Shortcuts (Ignores Desktop Panels)
-      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
-      [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts-fullscreen.png]]     
+*** Fullscreen Shortcuts
+Pressing the Fullscreen Prefix keys prior to any other shortcuts will fullscreen the window to the selected section of the screen. The fullscreen behavior ignores panels and gaps when calculating the portion of the screen to occupy. This allows fullscreen applications like games or video to occupy a portion of the screen in a manner similar to hardware picture by picture modes.
+
+The second prefix (avoiding panels) calculates the section of the screen in the same manner as regular fullscreen but does not overlap any panels in that section. This will act as a maximize if the monitor consisted of only that portion of teh screen. This is useful if you are running a fullscreen application on a portion of the screen and wanted to to maximize a window on the remaining portion of the screen.  
 
 
 *** Recommendations for Non-Ultrawide Monitors
