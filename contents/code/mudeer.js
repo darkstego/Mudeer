@@ -116,68 +116,56 @@ function move(workspace,xSlots,x,xSize, yPos) {
 			var diff = (geometry.x + geometry.width) - (maxArea.x + maxArea.width)
 			geometry.width -= diff
 		}
+	} else {
+		client.keepAbove = true;	
 	}
 
-	client.geometry = geometry
+	client.geometry = geometry;
 
-	prefix_fullscreen = false
-	prefix_avoid_panel = false
+	// can implement toggle option to change fullscreen prefix behaviour
+	var fs_toggle = false;
+	if (!fs_toggle){
+		prefix_fullscreen = false;
+		prefix_avoid_panel = false;
+	}
 }
 
-
-// Side: 0 = Full
-//       1 = Left
-//       2 = Right
-// remainder: true then window will fill remaining space while respecting panel
-function fullscreen(workspace, side, remainder) {
-	var client = workspace.activeClient
-	if (client.specialWindow) return
-
-	var maxArea = workspace.clientArea(KWin.MaximizeArea, client)
-	var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
-	var geometry= {x:fullArea.x,y:fullArea.y,width:fullArea.width,height:fullArea.height}
-
-	if (side > 0) {
-		geometry.width=fullArea.width/2
-	}
-	if (side == 2) {
-		geometry.x+=fullArea.width/2
-	}
-	if (remainder) {
-		geometry.y=maxArea.y
-		geometry.height=maxArea.height
-		if (geometry.x < maxArea.x) {
-			var diff = maxArea.x - geometry.x
-			geometry.x=maxArea.x
-			geometry.width-=diff
-		}
-		else if ((geometry.x + geometry.width) > (maxArea.x + maxArea.width)) {
-			var diff= (geometry.x + geometry.width) - (maxArea.x + maxArea.width)
-			geometry.width-=diff
-		}
-	}
-	client.geometry=geometry
-}
 
 var prefix = "Mudeer Ultrawide: "
 
 // Must pass 'workspace' since it would be out of scope otherwise
-registerShortcut("Mudeer Fullscreen", prefix+"Fullscreen", "Meta+f", function () {
-	fullscreen(workspace, 0, false)})
+
+// Next 4 Shortcuts will be deprecated
 registerShortcut("Mudeer Fullscreen Right", prefix+"Fullscreen Right Half", "", function () {
-	fullscreen(workspace, 2, false)})
+	prefix_fullscreen = true;
+	move(workspace,2,1,1,0);
+});
 registerShortcut("Mudeer Fullscreen Left", prefix+"Fullscreen Left Half", "", function () {
-	fullscreen(workspace, 1, false)})
+	prefix_fullscreen = true;
+	move(workspace,2,0,1,0);
+});
 registerShortcut("Mudeer Fullscreen Right Remainder", prefix+"Fullscreen Right Half Remainder", "", function () {
-	fullscreen(workspace, 2, true)})
+	prefix_avoid_panel = true;
+	prefix_fullscreen = true;
+	move(workspace,2,1,1,0);
+});
 registerShortcut("Mudeer Fullscreen Left Remainder", prefix+"Fullscreen Left Half Remainder", "", function () {
-	fullscreen(workspace, 1, true)})
+	prefix_avoid_panel = true;
+	prefix_fullscreen = true;
+	move(workspace,2,0,1,0);
+});
+
+
 
 registerShortcut("Mudeer Fullscreen Prefix", prefix+"Fullscreen Prefix", "Meta+Ctrl+f", function () {
-	prefix_fullscreen = true})
-registerShortcut("Mudeer Fullscreen ", prefix+"Fullscreen Prefix avoid Panel", "Meta+Shift+Ctrl+f", function () {
-	prefix_fullscreen = true;
-	prefix_avoid_panel = true;})
+	var fs_toggle = false;
+	prefix_fullscreen = !fs_toggle || !prefix_fullscreen;
+})
+registerShortcut("Mudeer Fullscreen Prefix Avoid Panel", prefix+"Fullscreen Prefix avoid Panel", "Meta+Shift+Ctrl+f", function () {
+	var fs_toggle = false;
+	prefix_avoid_panel = !fs_toggle || !prefix_avoid_panel;
+	prefix_fullscreen = prefix_avoid_panel;
+})
 
 
 // Screen by Thirds
