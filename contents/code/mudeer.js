@@ -1,5 +1,5 @@
-var prefix_fullscreen = false
-var prefix_avoid_panel = false
+// enum (0->No Fullscreen; 1->Fullscreen; 2->Fullscreen avoid panels)
+var fullscreen_state = 0
 
 // Calculate the window geometry given slots chosen and area
 function getGeometry(area,slotGeometry){
@@ -69,7 +69,7 @@ function adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize) {
 // yPos ->  (0:Full Height, 1: Top, 2: Bottom)
 function move(workspace,xSlots,x,xSize, yPos) {
 	var client = workspace.activeClient
-	if (client.specialWindow) return
+	if (client.specialWindow) return;
 
 	var maxArea =  workspace.clientArea(KWin.MaximizeArea, client)
 	var fullArea = workspace.clientArea(KWin.FullScreenArea, client)
@@ -88,20 +88,20 @@ function move(workspace,xSlots,x,xSize, yPos) {
 		[x,xSlots,xSize,y,ySlots,ySize] = [y,ySlots,ySize,x,xSlots,xSize]
 	}
 	
-	if (prefix_fullscreen) {
-		area = fullArea
+	if (fullscreen_state > 0) {
+		area = fullArea;
 	}
-	var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize})
+	var geometry = getGeometry(area,{x:x,y:y,xSlots:xSlots,ySlots:ySlots,xSize:xSize,ySize:ySize});
 
-	if (!prefix_fullscreen) {
-	adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize)
-	adjustWidth(geometry,x,xSlots,xSize)
-	client.setMaximize(false,false)
-	} else if (prefix_avoid_panel)  {
+	if (fullscreen_state == 0) {
+		adjustGap(geometry,x,xSlots,xSize,y,ySlots,ySize);
+		adjustWidth(geometry,x,xSlots,xSize);
+		client.setMaximize(false,false);
+	} else if (fullscreen_state == 2)  {
 		if (geometry.y < maxArea.y ) {
-			var diff = maxArea.y - geometry.y
-			geometry.y=maxArea.y
-			geometry.height -= diff
+			var diff = maxArea.y - geometry.y;
+			geometry.y=maxArea.y;
+			geometry.height -= diff;
 		}
 		if ((geometry.y + geometry.height) > (maxArea.y + maxArea.height)) {
 			var diff = (geometry.y + geometry.height) - (maxArea.y + maxArea.height)
@@ -116,55 +116,52 @@ function move(workspace,xSlots,x,xSize, yPos) {
 			var diff = (geometry.x + geometry.width) - (maxArea.x + maxArea.width)
 			geometry.width -= diff
 		}
-	} else {
-		client.keepAbove = true;	
 	}
-
+	client.fullScreen = (fullscreen_state == 1);
 	client.geometry = geometry;
 
 	// can implement toggle option to change fullscreen prefix behaviour
 	var fs_toggle = false;
 	if (!fs_toggle){
-		prefix_fullscreen = false;
-		prefix_avoid_panel = false;
+		fullscreen_state = 0;
 	}
 }
 
 
-var prefix = "Mudeer Ultrawide: "
+var prefix = "Mudeer Ultrawide: ";
 
 // Must pass 'workspace' since it would be out of scope otherwise
 
 // Next 4 Shortcuts will be deprecated
 registerShortcut("Mudeer Fullscreen Right", prefix+"Fullscreen Right Half", "", function () {
-	prefix_fullscreen = true;
+	fullscreen_state = 1;
 	move(workspace,2,1,1,0);
 });
 registerShortcut("Mudeer Fullscreen Left", prefix+"Fullscreen Left Half", "", function () {
-	prefix_fullscreen = true;
+	fullscreen_state = 1;
 	move(workspace,2,0,1,0);
 });
 registerShortcut("Mudeer Fullscreen Right Remainder", prefix+"Fullscreen Right Half Remainder", "", function () {
-	prefix_avoid_panel = true;
-	prefix_fullscreen = true;
+	fullscreen_state = 2;
 	move(workspace,2,1,1,0);
 });
 registerShortcut("Mudeer Fullscreen Left Remainder", prefix+"Fullscreen Left Half Remainder", "", function () {
-	prefix_avoid_panel = true;
-	prefix_fullscreen = true;
+	fullscreen_state = 2;
 	move(workspace,2,0,1,0);
 });
-
 
 
 registerShortcut("Mudeer Fullscreen Prefix", prefix+"Fullscreen Prefix", "Meta+Ctrl+f", function () {
 	var fs_toggle = false;
-	prefix_fullscreen = !fs_toggle || !prefix_fullscreen;
+	if  ( !fs_toggle || !(fullscreen_state == 1)) {
+		fullscreen_state = 1;
+	} else fullscreen_state = 0;
 })
 registerShortcut("Mudeer Fullscreen Prefix Avoid Panel", prefix+"Fullscreen Prefix avoid Panel", "Meta+Shift+Ctrl+f", function () {
 	var fs_toggle = false;
-	prefix_avoid_panel = !fs_toggle || !prefix_avoid_panel;
-	prefix_fullscreen = prefix_avoid_panel;
+	if  ( !fs_toggle || !(fullscreen_state == 2)) {
+		fullscreen_state = 2;
+	} else fullscreen_state = 0;
 })
 
 
