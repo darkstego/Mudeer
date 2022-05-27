@@ -102,13 +102,11 @@ I am unsure if there is a way to register the configuration automatically with t
     the left 3/4 of the screen).
 
 *** Fullscreen
-    Use Meta + F to fullscreen the window (ignoring things like taskbars)
-    
-    To Fullscreen on half the screen Use Ctrl and Shift for Left and Right respectively. This is helpful to mimic the behaviour of having two seperate monitors side-by-side.
+Pressing the Fullscreen Prefix keys prior to any other shortcuts will fullscreen the window to the selected section of the screen. The fullscreen behavior ignores panels and gaps when calculating the portion of the screen to occupy. This allows fullscreen applications like games or video to occupy a portion of the screen in a manner similar to hardware picture by picture modes.
 
-    Holding the shift key will maximize instead of full screen (not cover the panel) in the side selected. This can be useful when you want to run a fullscreen (movie or game) on half the screen and maximize an application in the remaining part of the screen.
+The second prefix (avoiding panels) calculates the section of the screen in the same manner as regular fullscreen but does not overlap any panels in that section. This will act as a maximize if the monitor consisted of only that portion of teh screen. This is useful if you are running a fullscreen application on a portion of the screen and wanted to to maximize a window on the remaining portion of the screen.  
 
-    One recommendation is binding "Maximize Window" to Meta+Shift+f as it fits logically with these shortcuts.
+One recommendation is binding "Maximize Window" and "Fullscreen" from KDE KWin shortcuts to Meta+f and Meta+Shift+f as it fits logically with these shortcuts. I also bind "Minimize Window" to Meta+Alt+f to maximize the utilization of the shortcut keys available.
     
 *** Summary Table 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
@@ -142,10 +140,9 @@ Must press the Meta (aka Win or Super) key with all these shortcuts.
      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
      [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts.png]]     
  
-*** Fullscreen Shortcuts
-Pressing the Fullscreen Prefix keys prior to any other shortcuts will fullscreen the window to the selected section of the screen. The fullscreen behavior ignores panels and gaps when calculating the portion of the screen to occupy. This allows fullscreen applications like games or video to occupy a portion of the screen in a manner similar to hardware picture by picture modes.
+*** Vertical (Portrait) Monitors
+When the monitor is in the Vertical orientation then the segementation (quarters and thirds) occur top to bottom instead of left to right maximizing the resolution of the splts along the long edge of the screen. In this orientation the CTRL and ALT modifier keys restricts the windows to the left and right portion of the screen respectively.
 
-The second prefix (avoiding panels) calculates the section of the screen in the same manner as regular fullscreen but does not overlap any panels in that section. This will act as a maximize if the monitor consisted of only that portion of teh screen. This is useful if you are running a fullscreen application on a portion of the screen and wanted to to maximize a window on the remaining portion of the screen.  
 
 *** Recommendations for Non-Ultrawide Monitors
     For users of Non Ultrawide Monitors this script can be utilized by only mapping shortcuts for the left and right half tiling (and their top/bottom alternatives). This is functionally similar to KDE's own Quick Tile option with the added flexibility of having an adjustable gap between the windows.
