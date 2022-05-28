@@ -1,0 +1,2 @@
+* How to package kwinscript from latest commit
+git archive --format=zip -o Mudeer.kwinscript HEAD
