@@ -151,3 +151,7 @@ When the monitor is in the Vertical orientation then the segementation (quarters
 
 *** No configuration menus
   Make sure the link to ~/.local/share/kservices5/mudeer-ultrawide.desktop is available.
+  
+** Feedback
+  I would really like to know what people like and dislike about this project. Please provide feedback [[https://github.com/darkstego/Mudeer/issues/8][here]].
+  
