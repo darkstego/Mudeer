@@ -1,0 +1,24 @@
+{
+    "KPlugin": {
+        "Name": "Mudeer",
+        "Description": "Tiling for Ultrawide and Super Ultrawide Monitors",
+        "Icon": "preferences-system-windows",
+        
+        "Authors": [
+            {
+                "Email": "darkstego@gmail.com",
+                "Name": "Abdulla Bubshait"
+            }
+        ],
+        "Id": "mudeer",
+        "Version": "4.0",
+        "License": "MIT",
+        "ServiceTypes": [
+            "KWin/Script"
+        ],
+        "Website": "https://github.com/darkstego/Mudeer"
+    },
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/mudeer.js",
+    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted"
+}
