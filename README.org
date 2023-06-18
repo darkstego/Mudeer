@@ -1,7 +1,7 @@
 * Mudeer - KDE Plasma Tiling Manager for Ultrawide and Super Ultrawide monitors
 
 ** Features
-- Split monitor by width into quarters or thirds and height by halves
+- Split monitor by into tiles of halves, quarters or thirds, horirzontally or vertically
 - Configurable width increase for the middle window when split by thirds
 - Configurable gap between windows
 - Allows windows to fullscreen onto a portion of the screen
@@ -19,50 +19,29 @@
     #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
     [[https://github.com/darkstego/Mudeer/blob/media/fs.gif]]
 
-** Recent Changes (v3)
+** Changelog
+*** v4
+- Enable sequential button presses to tile vertically by thirds and quarters
+
+*** v3
 - Switch to prefix keys for fullscreen mode to allow fullscreen application of any size
 - Support Vertical screens
   
 ** Installation
 
 *** KDE Store (Through Systemsettings)
-NOTE: Systemsettings downloader can be finicky at time.  
-    
 Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
-
-To get the configuration settings to work you will need to register them manually from the command line as shown below.
-
-     #+BEGIN_EXAMPLE
-    mkdir -p ~/.local/share/kservices5
-    ln -sf ~/.local/share/kwin/scripts/mudeer-ultrawide/metadata.desktop ~/.local/share/kservices5/mudeer-ultrawide.desktop
-   #+END_EXAMPLE
-
-I am unsure if there is a way to register the configuration automatically with the scripts. 
    
 *** Manual
      #+BEGIN_EXAMPLE
     git clone https://github.com/darkstego/Mudeer.git
-    kpackagetool5 -i Mudeer
-    mkdir -p ~/.local/share/kservices5
-    ln -sf ~/.local/share/kwin/scripts/mudeer-ultrawide/metadata.desktop ~/.local/share/kservices5/mudeer-ultrawide.desktop
+    kpackagetool5 -i Mudeer || kpackagetool5 -u Mudeer
    #+END_EXAMPLE
-
-   To update
-   
-   #+BEGIN_SRC bash
-   git clone https://github.com/darkstego/Mudeer.git &&  kpackagetool5 -u Mudeer
-   #+END_SRC
-
-   You will need to disable then enable script from Systemsettings -> Kwin Scripts for update changes to take effect.
-
-   You may need to log out and back into the plasma session for changes to take effect.
 
 ** Configuration
    Configuration is done through KDE's Kwin Script Configuration. Find Mudeer under System Settings -> Kwin Scripts and there will be an options button.
 
    When changing the options you need to disable then enable the script for the changes to take effect. I think this is a quirk in KDE scripts.
-
-   In the configuration menu you are able to configure the width of middle window in a 3-wide configuration, and the gap between windows.
 
 ** Shortcuts
    The default shortcuts were designed to easily use with the left
@@ -111,27 +90,29 @@ One recommendation is binding "Maximize Window" and "Fullscreen" from KDE KWin s
 *** Summary Table 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
 
-| Shortcut             | Default Binding |
-|----------------------+-----------------|
-| Left Third           | Meta+a          |
-| Center Third         | Meta+s          |
-| Right Third          | Meta+d          |
-| Left Two Thirds      | Meta+Shift+a    |
-| Right Two Thirds     | Meta+Shift+d    |
-| Far Left Quarter     | Meta+z          |
-| Center Left Quarter  | Meta+x          |
-| Center Right Quarter | Meta+c          |
-| Far Right Quarter    | Meta+v          |
-| Left Half            | Meta+Shift+z    |
-| Left Three Quarters  | Meta+Shift+x    |
-| Center Half          | Meta+Shift+s    |
-| Right Three Quarters | Meta+Shift+c    |
-| Right Half           | Meta+Shift+v    |
-| Top half modifier    | Ctrl+           |
-| Bottom half modifier | Alt+            |
-
-| Fullscreen Prefix                 | Meta+Ctrl+f       |
-| Fullscreen Prefix avoiding Panels | Meta+Ctrl+Shift+f |
+| Shortcut                          | Default Binding   |
+|-----------------------------------+-------------------|
+| Whole                             | Meta+f            |
+| Left Third                        | Meta+a            |
+| Center Third                      | Meta+s            |
+| Right Third                       | Meta+d            |
+| Left Two Thirds                   | Meta+Shift+a      |
+| Right Two Thirds                  | Meta+Shift+d      |
+| Far Left Quarter                  | Meta+z            |
+| Center Left Quarter               | Meta+x            |
+| Center Right Quarter              | Meta+c            |
+| Far Right Quarter                 | Meta+v            |
+| Left Half                         | Meta+Shift+z      |
+| Left Three Quarters               | Meta+Shift+x      |
+| Center Half                       | Meta+Shift+s      |
+| Right Three Quarters              | Meta+Shift+c      |
+| Right Half                        | Meta+Shift+v      |
+| Top half modifier                 | Ctrl+             |
+| Bottom half modifier              | Alt+              |
+|-----------------------------------+-------------------|
+| Gapless Prefix                    | Meta+Shift+f      |
+| Fullscreen Prefix                 | Meta+Ctrl+Shift+f |
+| Fullscreen Prefix avoiding Panels | Meta+Alt+Shift+f  |
 
 *** Shortcuts Visualizations
 Must press the Meta (aka Win or Super) key with all these shortcuts.
@@ -150,7 +131,15 @@ When the monitor is in the Vertical orientation then the segementation (quarters
 ** Troubleshooting
 
 *** No configuration menus
-  Make sure the link to ~/.local/share/kservices5/mudeer-ultrawide.desktop is available.
+  Users on Plasma versions <5.23 check the [[https://bugs.kde.org/show_bug.cgi?id=444378#c10][following fix]] to get configuration menus to work.
+
+*** Configuration option changes not having any affect
+Disable and then re-enable the script to get it the settings to register.
+
+*** Some of the shortcuts don't work
+There might be a collision with existing KDE shortcuts. Try to search
+for the buttons in the shorcut menu in systemsettings to find the collision.
+  
   
 ** Feedback
   I would really like to know what people like and dislike about this project. Please provide feedback [[https://github.com/darkstego/Mudeer/issues/8][here]].
