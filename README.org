@@ -47,6 +47,8 @@ Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
    All Tiling is done with shortcut keys. The default shortcuts allow
    any tiling combination using 8 keys and the modifier keys. These
    are best explained through the diagram below.
+     #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
+     [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts-simple.png]]     
 
 
    To tile simply hold the Win (or Super/Meta) key while pressing the
