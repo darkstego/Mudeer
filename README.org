@@ -160,5 +160,5 @@ for the buttons in the shorcut menu in systemsettings to find the collision.
   
   
 ** Feedback
-  I would really like to know what people like and dislike about this project. Please provide feedback [[https://github.com/darkstego/Mudeer/issues/8][here]].
+  I would really like to know what people like and dislike about this project. Please provide feedback [[https://github.com/darkstego/Mudeer/discussions/11][here]].
   
