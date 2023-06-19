@@ -111,7 +111,7 @@ function move(workspace,tile) {
 		adjustShowPanel(geometry,maxArea)
 	}
 	client.fullScreen = (currentStyle == Style.Fullscreen) || (currentStyle == Style.FullscreenShowPanel)
-	client.geometry = geometry
+	client.frameGeometry = geometry
 
 	if (!prefixToggle){
 		currentStyle = Style.Normal
@@ -129,7 +129,7 @@ function isSequence(client) {
 	if (!readConfig("sequenceEnabled", false)) return false
 	if (previousClient == null) return false
 	if (previousClient != client) return false
-	const timeThreshold = readConfig("sequenceTime", 3000)
+	const timeThreshold = readConfig("sequenceTime", 1000)
 	if (new Date().getTime() - previousTime > timeThreshold) return false
 	return true
 }

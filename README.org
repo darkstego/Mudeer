@@ -35,7 +35,7 @@ Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
 *** Manual
      #+BEGIN_EXAMPLE
     git clone https://github.com/darkstego/Mudeer.git
-    kpackagetool5 -i Mudeer || kpackagetool5 -u Mudeer
+    cd Mudeer && make install
    #+END_EXAMPLE
 
 ** Configuration
@@ -44,50 +44,71 @@ Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
    When changing the options you need to disable then enable the script for the changes to take effect. I think this is a quirk in KDE scripts.
 
 ** Shortcuts
-   The default shortcuts were designed to easily use with the left
-   hand to allow use quickly while using the mouse. As a result, *some of these shortcuts will not be enabled unless they are enabled manually* through the KDE shortcut menu. This happens when some of
-   those shortcuts overwrite others in KDE.
+   All Tiling is done with shortcut keys. The default shortcuts allow
+   any tiling combination using 8 keys and the modifier keys. These
+   are best explained through the diagram below.
+
+
+   To tile simply hold the Win (or Super/Meta) key while pressing the
+   corresponding button. The modifiers can be used to tile to the top
+   or bottom half or (Shift) to increase the tile's size to encompass the
+   neighboring tiling spots.
+
+*** Why these shortcut choices?
+   The default shortcuts were designed to be able to quickly move
+   windows around without the need to drag windows around. They were
+   designed to to follow a logical pattern, so even if you don't use
+   some of the shortcuts you can quickly remember which button tiles
+   to which location.  By picking these shortcut buttons, however,
+   *some of these shortcuts will not be enabled unless they are
+   enabled manually* through the KDE shortcut menu. This happens when
+   some of those shortcuts overwrite others in KDE.
+
+*** What if I don't like these shortcut
+   These shortcuts are just choices I felt would work well, and
+	provide the most flexibilty given a small number of keys. You are
+	free to change them or, if you don't need all the shortcuts, to
+	disable some and only use the shortcuts you need.
 
    You can see all the shortcuts for this project by searching the
    global shortcuts settings menu for "mudeer".
 
-   The Shortcuts all use the Meta (known as Win or Super outside
-   KDE). Below is the explenation of the default bindings.
-*** Thirds
-    Use Meta + A,S,D for left middle and right thirds respectively.
-    
-    Alt modifier for only the bottom half.
-    
-    Ctrl modifier for only the top half.
+*** What if I want to tile vertically into segments smaller than half?
+   You can use sequential tiling. First enable it from the
+   configuration menu, then you can press two shortcuts in quick
+   succession to first tile horizontally and then vertically. This
+   allows for tiling vertically by thirds and quarters.
 
-    Shift modifier increases width to encompass all neighboring
-    thirds. (e.g. Pressing Meta+Shift+A will make the window take up
-    the left and middle thirds). Note: if chosen with middle third
-    (S) then it will consider it as middle-half, since otherwise it
-    would be identical to maximize.
-    
-    Note: Middle third can be made bigger than the others by using the Kwin Configuration.
-    This is useful to give extra space to the middle window in a three wide display.
+*** Vertical (Portrait) Monitors
+When the monitor is in the Vertical orientation then the segementation
+(quarters and thirds) occur top to bottom instead of left to right
+maximizing the resolution of the splts along the long edge of the
+screen. In this orientation the CTRL and ALT modifier keys restricts
+the windows to the left and right portion of the screen respectively.
 
-*** Quarters    
-    Use Meta + Z,X,C,V for left, middle left, middle right, and right Quarters respectively.
-    
-    Alt modifier for only the bottom half.
-    
-    Ctrl modifier for only the top half.
 
-    Shift modifier increases width to encompass all neighboring
-    slots. (e.g. Pressing Meta+Shift+X will make the window take up
-    the left 3/4 of the screen).
+*** Prefix keys
+There are three prefix keys that can be used to modify the next tile
+you select with a shortcut.
 
-*** Fullscreen
-Pressing the Fullscreen Prefix keys prior to any other shortcuts will fullscreen the window to the selected section of the screen. The fullscreen behavior ignores panels and gaps when calculating the portion of the screen to occupy. This allows fullscreen applications like games or video to occupy a portion of the screen in a manner similar to hardware picture by picture modes.
+**** Gapless
+This removes the gap from the next tile, even when gap is
+configured. Useful when playing a video in a tile.
 
-The second prefix (avoiding panels) calculates the section of the screen in the same manner as regular fullscreen but does not overlap any panels in that section. This will act as a maximize if the monitor consisted of only that portion of teh screen. This is useful if you are running a fullscreen application on a portion of the screen and wanted to to maximize a window on the remaining portion of the screen.  
+**** Fullscreen
+This option allows the tile to cover any panel or dock. Useful for
+games or videos. This can be used to replicate the behaviour of multiple screens dynamically.
 
-One recommendation is binding "Maximize Window" and "Fullscreen" from KDE KWin shortcuts to Meta+f and Meta+Shift+f as it fits logically with these shortcuts. I also bind "Minimize Window" to Meta+Alt+f to maximize the utilization of the shortcut keys available.
-    
-*** Summary Table 
+**** Fullscreen show panel
+When using the the fullscreen prefix, the tiling will split the entire
+screen area, and not just the workable area (the area left after
+ignoring the panel). That means each tile will have a slightly
+different size and position compared do the regulart tiling, which
+makes mixing fullscreen and non-fullscreen tiles a bit
+difficult. Especially when the panel resides on the sides. This option
+allows tilling windows next to fullscreen windows, while still keeping the panel visible.
+
+*** Shortcut Summary 
 Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super) key.
 
 | Shortcut                          | Default Binding   |
@@ -114,15 +135,10 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Fullscreen Prefix                 | Meta+Ctrl+Shift+f |
 | Fullscreen Prefix avoiding Panels | Meta+Alt+Shift+f  |
 
-*** Shortcuts Visualizations
-Must press the Meta (aka Win or Super) key with all these shortcuts.
-    
 **** Standard Shortcuts
      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
      [[https://github.com/darkstego/Mudeer/blob/media/Mudeer-shortcuts.png]]     
  
-*** Vertical (Portrait) Monitors
-When the monitor is in the Vertical orientation then the segementation (quarters and thirds) occur top to bottom instead of left to right maximizing the resolution of the splts along the long edge of the screen. In this orientation the CTRL and ALT modifier keys restricts the windows to the left and right portion of the screen respectively.
 
 
 *** Recommendations for Non-Ultrawide Monitors
