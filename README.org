@@ -121,6 +121,7 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Right Third                       | Meta+d            |
 | Left Two Thirds                   | Meta+Shift+a      |
 | Right Two Thirds                  | Meta+Shift+d      |
+| Center Two Thirds                 | <Unbound>         |
 | Far Left Quarter                  | Meta+z            |
 | Center Left Quarter               | Meta+x            |
 | Center Right Quarter              | Meta+c            |

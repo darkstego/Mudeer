@@ -205,6 +205,7 @@ function registerMudeerShortcuts() {
 	["Third Right",new Tile(2,0,3,1),"d"],
 	["Two-Thirds Left",new Tile(0,0,3,1,2,1),"Shift+a"],
 	["Two-Thirds Right",new Tile(1,0,3,1,2,1),"Shift+d"],
+	["Two-Thirds Middle",new Tile(1,0,6,1,4,1),""],
 	["Half Left",new Tile(0,0,2,1),"Shift+z"],
 	["Half Middle",new Tile(1,0,4,1,2,1),"Shift+s"],
 	["Half Right",new Tile(1,0,2,1),"Shift+v"],
