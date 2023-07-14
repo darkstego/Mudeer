@@ -218,9 +218,17 @@ function registerMudeerShortcuts() {
 	
 	// Must pass 'workspace' since it wasn't working otherwise (maybe out of scope?)
 	positions.forEach(function (position) {
-		registerShortcut("Mudeer "+position[0], prefix+position[0], "Meta+"+position[2], move.bind(null,workspace,position[1]));
-		registerShortcut("Mudeer "+position[0]+" Top", prefix+position[0]+" Top", "Meta+Ctrl+"+position[2], move.bind(null,workspace,position[1].top()));
-		registerShortcut("Mudeer "+position[0]+" Bottom", prefix+position[0]+" Bottom", "Meta+Alt+"+position[2], move.bind(null,workspace,position[1].bottom()));
+		let shortcut = ""
+		let shortcutTop = ""
+		let shortcutBot = ""
+		if (position[2]) {
+			shortcut = "Meta+"+position[2]
+			shortcutTop = "Meta+Ctrl+"+position[2]
+			shortcutBot = "Meta+Alt+"+position[2]
+		}
+		registerShortcut("Mudeer "+position[0], prefix+position[0], shortcut, move.bind(null,workspace,position[1]));
+		registerShortcut("Mudeer "+position[0]+" Top", prefix+position[0]+" Top", shortcutTop, move.bind(null,workspace,position[1].top()));
+		registerShortcut("Mudeer "+position[0]+" Bottom", prefix+position[0]+" Bottom", shortcutBot, move.bind(null,workspace,position[1].bottom()));
 	})
 
 	registerShortcut("Mudeer Gapless Prefix", prefix+"Gapless Prefix", "Meta+Shift+f", function () {
