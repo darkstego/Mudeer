@@ -121,7 +121,7 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Right Third                       | Meta+d            |
 | Left Two Thirds                   | Meta+Shift+a      |
 | Right Two Thirds                  | Meta+Shift+d      |
-| Center Two Thirds                 | <Unbound>         |
+| Center Two Thirds                 | <Unbound> *       |
 | Far Left Quarter                  | Meta+z            |
 | Center Left Quarter               | Meta+x            |
 | Center Right Quarter              | Meta+c            |
@@ -137,6 +137,8 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
 | Gapless Prefix                    | Meta+Shift+f      |
 | Fullscreen Prefix                 | Meta+Ctrl+Shift+f |
 | Fullscreen Prefix avoiding Panels | Meta+Alt+Shift+f  |
+
+(*) Project recommendation is to use "Meta+Shift+s" if user prefers Center Two-Thirds, instead of Center Half.
 
 **** Standard Shortcuts
      #+ATTR_HTML: :style margin-left: auto; margin-right: auto;
