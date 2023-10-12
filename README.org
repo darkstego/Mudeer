@@ -66,14 +66,17 @@ Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
    enabled manually* through the KDE shortcut menu. This happens when
    some of those shortcuts overwrite others in KDE.
 
+   You can find and edit all shortcuts by navigating to the KDE
+   shortcuts settings (System Setting -> Shortcuts). Search for
+   "mudeer" to view and edit all shortcuts provided by this script.
+
 *** What if I don't like these shortcut
    These shortcuts are just choices I felt would work well, and
 	provide the most flexibilty given a small number of keys. You are
 	free to change them or, if you don't need all the shortcuts, to
 	disable some and only use the shortcuts you need.
 
-   You can see all the shortcuts for this project by searching the
-   global shortcuts settings menu for "mudeer".
+   See previous question on how to edit the shortcuts.
 
 *** What if I want to tile vertically into segments smaller than half?
    You can use sequential tiling. First enable it from the
