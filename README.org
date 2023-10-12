@@ -67,7 +67,7 @@ Under SystemSettings -> Kwin Scripts, you can search for and install Mudeer.
    some of those shortcuts overwrite others in KDE.
 
    You can find and edit all shortcuts by navigating to the KDE
-   shortcuts settings (System Setting -> Shortcuts). Search for
+   shortcuts settings (System Settings -> Shortcuts). Search for
    "mudeer" to view and edit all shortcuts provided by this script.
 
 *** What if I don't like these shortcut
