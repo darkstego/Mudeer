@@ -73,7 +73,8 @@ class Tile {
 // Main function called
 // Will move current active window to the specified tile
 function move(workspace,tile) {
-	const client = workspace.activeClient
+	print("inMove")
+	const client = workspace.activeWindow
 	if (client.specialWindow) return;
 
 	const maxArea =  workspace.clientArea(KWin.MaximizeArea, client)
@@ -199,6 +200,7 @@ function adjustShowPanel(geometry,area){
 
 
 function registerMudeerShortcuts() {
+	print("Registering")
 	const prefix = "Mudeer Ultrawide: "
 	const positions = [["Third Left",new Tile(0,0,3,1),"a"],
 	["Third Middle",new Tile(1,0,3,1),"s"],
