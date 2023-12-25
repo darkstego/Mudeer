@@ -73,7 +73,7 @@ class Tile {
 // Main function called
 // Will move current active window to the specified tile
 function move(workspace,tile) {
-	const client = workspace.activeClient
+	const client = workspace.activeWindow
 	if (client.specialWindow) return;
 
 	const maxArea =  workspace.clientArea(KWin.MaximizeArea, client)
