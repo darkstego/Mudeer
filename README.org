@@ -154,6 +154,14 @@ Below is the list of default shortcuts. Again, Meta in KDE is the Win (or Super)
       
 ** Troubleshooting
 
+*** Registered Shortcuts Don't Work
+  Sometimes Plasma shortcuts get messed up and the only way to reset them is the following song and dance.
+- Uninstall Mudeer
+- Log Out of KDE Plasma (The following edits need to be done after logout and before login)
+- Edit ~/.config/kglobalshortcutsrc and remove all lines starting by Mudeer
+- Log in to KDE Plasma and reinstall Mudeer
+- You may need to disable and re-enable Mudeer. Go to Settings->Window Management->Kwin scripts and you'll see Mudeer checked, uncheck it, hit apply. Check it again and hit apply.
+
 *** No configuration menus
   Users on Plasma versions <5.23 check the [[https://bugs.kde.org/show_bug.cgi?id=444378#c10][following fix]] to get configuration menus to work.
 
