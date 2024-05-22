@@ -1,5 +1,7 @@
 * Mudeer - KDE Plasma Tiling Manager for Ultrawide and Super Ultrawide monitors
 
+*** This script supports KDE6. For the older KDE5 version use script version 4
+
 ** Features
 - Split monitor by into tiles of halves, quarters or thirds, horirzontally or vertically
 - Configurable width increase for the middle window when split by thirds
@@ -20,6 +22,9 @@
     [[https://github.com/darkstego/Mudeer/blob/media/fs.gif]]
 
 ** Changelog
+*** v5
+- Migrate to KDE6
+
 *** v4
 - Enable sequential button presses to tile vertically by thirds and quarters
 

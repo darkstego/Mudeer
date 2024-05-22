@@ -10,7 +10,7 @@
             }
         ],
         "Id": "mudeer",
-        "Version": "4.0",
+        "Version": "5.0",
         "License": "MIT",
         "ServiceTypes": [
             "KWin/Script"
