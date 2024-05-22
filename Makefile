@@ -6,12 +6,12 @@ build: package
 	(cd package && mv $(PKGFILE) ../)
 
 install: build
-	kpackagetool5 -t KWin/Script -s $(PROJECT_NAME) \
-		&& kpackagetool5 -u $(PKGFILE) \
-		|| kpackagetool5 -i $(PKGFILE)	
+	kpackagetool6 -t KWin/Script -s $(PROJECT_NAME) \
+		&& kpackagetool6 -u $(PKGFILE) \
+		|| kpackagetool6 -i $(PKGFILE)	
 
 uninstall:
-	kpackagetool5 -t KWin/Script -r $(PROJECT_NAME)
+	kpackagetool6 -t KWin/Script -r $(PROJECT_NAME)
 
 clean:
 	rm -f $(PKGFILE)
