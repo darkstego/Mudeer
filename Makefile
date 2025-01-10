@@ -7,8 +7,8 @@ build: package
 
 install: build
 	kpackagetool6 -t KWin/Script -s $(PROJECT_NAME) \
-		&& kpackagetool6 -u $(PKGFILE) \
-		|| kpackagetool6 -i $(PKGFILE)	
+		&& kpackagetool6 -t KWin/Script -u $(PKGFILE) \
+		|| kpackagetool6 -t KWin/Script -i $(PKGFILE)	
 
 uninstall:
 	kpackagetool6 -t KWin/Script -r $(PROJECT_NAME)
