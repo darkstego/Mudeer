@@ -1,2 +1,5 @@
 * How to package kwinscript from latest commit
-git archive --format=zip -o Mudeer.kwinscript HEAD
+make build
+
+* How to reload script after update from command line
+kwriteconfig6 --file kwinrc --group Plugins --key mudeerEnabled false && dbus-send --session --type=method_call --dest=org.kde.KWin /KWin org.kde.KWin.reconfigure && sleep 1 && kwriteconfig6 --file kwinrc --group Plugins --key mudeerEnabled true && dbus-send --session --type=method_call --dest=org.kde.KWin /KWin org.kde.KWin.reconfigure && echo done
