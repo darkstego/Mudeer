@@ -110,7 +110,6 @@ function move(workspace,tile) {
 	} else if (currentStyle == Style.FullscreenShowPanel)  {
 		adjustShowPanel(geometry,maxArea)
 	}
-	client.fullScreen = (currentStyle == Style.Fullscreen) || (currentStyle == Style.FullscreenShowPanel)
 	client.frameGeometry = geometry
 
 	if (!prefixToggle){
